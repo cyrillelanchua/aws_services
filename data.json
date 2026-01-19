@@ -1,0 +1,138 @@
+{
+  "categories": [
+    {
+      "name": "Database",
+      "groups": [
+        {
+          "name": "Relational Database",
+          "services": [
+            {
+              "title": "Amazon RDS",
+              "description": "Amazon Relational Database Service (RDS) makes it easy to set up, operate, and scale a relational database in the cloud. Supports MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB."
+            },
+            {
+              "title": "Amazon Aurora",
+              "description": "MySQL and PostgreSQL-compatible relational database built for the cloud. Performance and availability of commercial-grade databases at 1/10th the cost."
+            }
+          ]
+        },
+        {
+          "name": "NoSQL Database",
+          "services": [
+            {
+              "title": "Amazon DynamoDB",
+              "description": "Fast and flexible NoSQL database service for single-digit millisecond performance at any scale. Fully managed, multi-region, multi-active database."
+            },
+            {
+              "title": "Amazon DocumentDB",
+              "description": "Fast, scalable, highly available MongoDB-compatible database service. Makes it easy to store, query, and index JSON data."
+            }
+          ]
+        },
+        {
+          "name": "In-Memory Database",
+          "services": [
+            {
+              "title": "Amazon ElastiCache",
+              "description": "Fully managed in-memory data store and cache service supporting Redis and Memcached. Sub-millisecond latency for real-time applications."
+            }
+          ]
+        },
+
+        {
+          "name": "In-Memory Database",
+          "services": [
+            {
+              "title": "Amazon ElastiCache",
+              "description": "Fully managed in-memory data store and cache service supporting Redis and Memcached. Sub-millisecond latency for real-time applications."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Compute",
+      "groups": [
+        {
+          "name": "Virtual Machines",
+          "services": [
+            {
+              "title": "Amazon EC2",
+              "description": "Elastic Compute Cloud provides secure, resizable compute capacity in the cloud. Wide selection of instance types optimized for different use cases."
+            },
+            {
+              "title": "Amazon Lightsail",
+              "description": "Easy-to-use virtual private server (VPS) with simple management. Includes everything you need to launch your project quickly."
+            }
+          ]
+        },
+        {
+          "name": "Containers",
+          "services": [
+            {
+              "title": "Amazon ECS",
+              "description": "Elastic Container Service is a fully managed container orchestration service. Deep integration with AWS services for production workloads."
+            },
+            {
+              "title": "Amazon EKS",
+              "description": "Elastic Kubernetes Service makes it easy to run Kubernetes on AWS without managing the control plane. Certified Kubernetes conformant."
+            }
+          ]
+        },
+        {
+          "name": "Serverless",
+          "services": [
+            {
+              "title": "AWS Lambda",
+              "description": "Run code without provisioning or managing servers. Pay only for the compute time you consume. Supports multiple programming languages."
+            },
+            {
+              "title": "AWS Fargate",
+              "description": "Serverless compute engine for containers. Works with both ECS and EKS. Eliminates the need to provision and manage servers."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Storage",
+      "groups": [
+        {
+          "name": "Object Storage",
+          "services": [
+            {
+              "title": "Amazon S3",
+              "description": "Simple Storage Service offers industry-leading scalability, data availability, security, and performance. Store and retrieve any amount of data at any time."
+            },
+            {
+              "title": "Amazon Glacier",
+              "description": "Low-cost cloud storage service for data archiving and long-term backup. Secure, durable, and extremely low-cost storage for data that is rarely accessed."
+            }
+          ]
+        },
+        {
+          "name": "Block Storage",
+          "services": [
+            {
+              "title": "Amazon EBS",
+              "description": "Elastic Block Store provides persistent block storage volumes for EC2 instances. Designed for workloads requiring low-latency access."
+            }
+          ]
+        },
+        {
+          "name": "File Storage",
+          "services": [
+            {
+              "title": "Amazon EFS",
+              "description": "Elastic File System provides simple, scalable, elastic file storage for use with AWS Cloud services and on-premises resources."
+            },
+            {
+              "title": "Amazon FSx",
+              "description": "Fully managed third-party file systems. Supports Windows File Server, Lustre, NetApp ONTAP, and OpenZFS."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
