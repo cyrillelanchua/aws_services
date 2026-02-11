@@ -27,6 +27,306 @@ const awsServicesData = {
       ]
     },
     {
+      "name": "Deploying and operating the cloud",
+      "groups": [
+        {
+          "name": "Interacting with the cloud",
+          "services": [
+            {
+              "title": "AWS Management Console",
+              "description": `The AWS Management Console is a web-based interface for accessing and managing AWS services.
+                              It provides a graphical interface for users to interact with AWS resources, configure services, and monitor usage and performance.`
+            },
+            {
+              "title": "AWS CLI (Command Line Interface)",
+              "description": `The AWS Command Line Interface (CLI) is a unified tool to manage AWS services.
+                              With just one tool to download and configure, you can control multiple AWS services from the command line and automate them through scripts.
+                              Uses commands in your command-line shell to interact with AWS services. Can use scripts to automate tasks.`
+            },
+            {
+              "title": "AWS SDKs (Software Development Kits)",
+              "description": `AWS SDKs provide a set of libraries and tools for various programming languages to interact with AWS services.
+                              They simplify the process of making API calls, handling authentication, and managing responses, allowing developers to integrate AWS services into their applications more easily.
+                              can be used with various programming languages, such as Python, Java, JavaScript, and more.
+                              They provide a higher-level abstraction for interacting with AWS services, making it easier to integrate AWS functionality into applications.`
+            }
+          ]
+        },
+        {
+          "name": "Infrastructure as code (IaC)",
+          "services": [
+            {
+              "title": "Concepts",
+              "description": `Infrastructure as Code (IaC) is the practice of managing and provisioning computing infrastructure through machine-readable configuration files,
+                              rather than through physical hardware configuration or interactive configuration tools.
+                              It allows for automation, version control, and consistency in managing infrastructure.
+                              examples AWS Elastic Beanstalk, AWS CloudFormation, AWS Lambda, and AWS CDK (Cloud Development Kit).`
+            },
+          ]
+        },
+        {
+          "name": "Connecting to the cloud",
+          "services": [
+            {
+              "title": "Virtual Private Cloud (VPC)",
+              "description": `A Virtual Private Cloud (VPC) is a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define.
+                              You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
+                              VPCs provide security and isolation, allowing you to control inbound and outbound traffic to your resources.
+                              VPCs are isolated from other users and resources in the AWS cloud, providing a secure environment for your applications and data.`
+            },
+            {
+              "title": "Virtual Private Network (VPN)",
+              "description": `A Virtual Private Network (VPN) extends a private network across a public network, allowing users to send and receive data as if their devices were directly connected to the private network.
+                              VPNs provide secure communication over the internet, encrypting data to protect it from unauthorized access.
+                              They are commonly used to connect remote offices or users to a central corporate network, ensuring secure access to resources.
+
+                              Creates an encrypted connection between your on-premises network and your VPC over the public internet. This allows you to securely access resources in your VPC as if you were directly connected to it.
+
+                              Amazon has its own VPN service called AWS VPN that helps establish secure connections between your on-premises network and your AWS VPCs. It provides two types of VPN connections: AWS Site-to-Site VPN and AWS Client VPN. AWS Site-to-Site VPN allows you to connect your on-premises network to your VPC using an IPsec VPN connection, while AWS Client VPN enables you to securely access your AWS resources from any location using an OpenVPN-based client.`
+            },
+            {
+              "title": "AWS Direct Connect",
+              "description": `AWS Direct Connect is a cloud service solution that makes it easy to establish a dedicated network connection from your premises to AWS.
+                              Using AWS Direct Connect, you can establish private connectivity between AWS and your data center, office, or colocation environment, which in many cases can reduce your network costs,
+                              increase bandwidth throughput, and provide a more consistent network experience than internet-based connections.
+
+                              considered "shortest path" to AWS, providing a more consistent network experience than internet-based connections.
+                              It can be used to connect to all AWS services in the same region, and it can also be used to connect to AWS services in other regions through AWS Direct Connect Gateway.`
+            },
+            {
+              "title": "Public Internet",
+              "description": `The public internet is the most common way to connect to AWS services. It provides a flexible and cost-effective method for accessing AWS resources from anywhere in the world.
+                              However, it may not offer the same level of performance or security as dedicated connections like AWS Direct Connect.
+                              Not private or secure. not encrypted by default, so you should use additional security measures like VPNs or encryption to protect your data when using the public internet to connect to AWS services.`
+            },
+          ]
+        },
+        {
+          "name": "AWS Global infrastructure",
+          "services": [
+            {
+              "title": "Availability Zones (AZs)",
+              "description": `Availability Zones (AZs) are isolated locations within an AWS region. Each AZ consists of one or more data centers with redundant power, networking, and connectivity.
+                              AZs are designed to be **independent from failures** in other AZs, providing high availability and fault tolerance for your applications.
+                              By deploying resources across multiple AZs, you can achieve greater resilience and minimize the impact of potential failures.
+
+                              **High availability**
+                              Hosting resources in multiple AZs allows you to design your applications for high availability.
+                              By deploying resources across multiple AZs, you can achieve greater resilience and minimize the impact of potential failures.
+                              If one AZ experiences an outage, your applications can continue to operate using resources in other AZs, ensuring high availability for your users.
+
+                              **Fault tolerance**
+                              Ability to provide uninterrupted service even during natural/human-made disasters, hardware failures, or other unexpected events.
+                              AZs are designed to be independent from failures in other AZs, providing fault tolerance for your applications.
+                              If one AZ experiences an outage, your applications can continue to operate using resources in other AZs, minimizing downtime and ensuring a seamless user experience.
+
+                              **Resiliency**
+                              Capacity to recover quickly from failures and continue operating without significant disruption.
+                              AZs are designed to be resilient to failures, with redundant power, networking, and connectivity.
+                              By deploying resources across multiple AZs, you can achieve greater resilience and minimize the impact of potential failures on your applications.`
+            },
+            {
+              "title": "Regions",
+              "description": `Two or more AZs make up an AWS Region. Each region is a separate geographic area that AWS uses to house its data centers. Each region is isolated from others to ensure the highest possible fault tolerance and stability.
+                              All AZs within a region are interconnected with low-latency, high-throughput, and redundant networking, which allows you to design your applications for high availability and fault tolerance within a single region.
+                              Regions are separate geographic areas that AWS uses to house its data centers. Each region is isolated from others to ensure the highest possible fault tolerance and stability.
+
+                              Different regions have different services available, and there may be differences in pricing and latency depending on the region you choose. When designing your applications, it's important to consider the geographic location of your users and the services you need to ensure optimal performance and cost-effectiveness.`
+            },
+            {
+              "title": "AWS Local Zones",
+              "description": `Help you run latency-sensitive applications closer to end-users by placing compute, storage, database, and other select AWS services in locations that are geographically closer to your users.
+                              Helpful when there are no AWS regions close enough to your end-users, or when you need to run applications that require single-digit millisecond latency.
+
+                              AWS Local Zones are an extension of an AWS Region that places compute, storage, database, and other select AWS services closer to your end-users. This helps reduce latency and improve performance for applications that require single-digit millisecond latency.
+                              Local Zones are ideal for use cases such as real-time gaming, live video streaming, and machine learning inference, where low latency is critical.
+                              They are connected to the parent region via high-bandwidth, low-latency networking, allowing you to seamlessly integrate Local Zones with your existing AWS resources.`
+            },
+            {
+              "title": "AWS Wavelength Zones",
+              "description": `Provide ultra-low latency access to AWS services at the edge of the 5G network, enabling developers to build applications that require single-digit millisecond latency.
+
+                              AWS Wavelength Zones bring AWS services to the edge of the 5G network, enabling developers to build applications that require ultra-low latency and high bandwidth.
+                              They are ideal for use cases such as augmented reality (AR), virtual reality (VR), and real-time gaming, where milliseconds matter.
+                              Wavelength Zones are connected to the parent region via high-bandwidth, low-latency networking, allowing you to seamlessly integrate Wavelength Zones with your existing AWS resources.`
+            },
+          ]
+        },
+      ]
+    },
+    {
+      "name": "Access Management",
+      "groups": [
+        {
+          "name": "Concepts",
+          "services": [
+            {
+              "title": "Principle of least privilege",
+              "description": `Only provide the minimum access necessary for users to perform their job functions. This minimizes potential security risks by limiting unnecessary permissions.`
+            },
+            {
+              "title": "IAM Roles",
+              "description": `Roles are used to delegate access to users, applications, or services that don't normally have access to your AWS resources.
+                              Roles define a set of permissions that determine what actions are allowed and what resources can be accessed.
+                              Has policies attached to them that define the permissions.
+                              Not associated with a specific user or group.
+                              User can assume a role to gain temporary access to the permissions defined in the role's policies.`
+            },
+            {
+              "title": "Policies",
+              "description": `Policies define permissions and can be attached to users, groups, or roles to specify what actions are allowed or denied on AWS resources.
+                              Defines what actions are allowed or denied on specific resources.`
+            },
+            {
+              "title": "Permission",
+              "description": `Permission in policies define what actions are allowed or denied on specific AWS resources.`
+            },
+            {
+              "title": "Security Groups",
+              "description": `Help you control inbound and outbound traffic to your **AWS resources or instance level**. Such as EC2 instances and VPCs. Set what traffic is **allowed** to reach your resources.
+                              Stateful (remembers), which means that if you allow inbound traffic on a specific port, the response traffic is automatically allowed to flow back out, regardless of outbound rules.`
+            },
+            {
+              "title": "Network Access Control Lists (NACLs)",
+              "description": `**Denies or allows** traffic at the **subnet level** within a VPC.
+                              Stateless (forgets), which means that you must explicitly allow return traffic by configuring rules for both inbound and outbound traffic. It **checks the traffic again** when it leaves the subnet, and you need to ensure that the appropriate rules are in place to allow the return traffic.`
+            },
+            {
+              "title": "Security Credentials",
+              "description": `Password policy: password requirements, rotation, and reuse
+                              Multi-factor authentication (MFA): adds an extra layer of security by requiring a second form of authentication
+                              Access keys: used for programmatic access to AWS services via APIs or SDKs`
+            },
+            {
+              "title": "AWS account root user",
+              "description": `SUPER powerful user with unrestricted access to all AWS services and resources in the account.
+                              Should only be used for initial setup and account management tasks.
+                              Best practice is to create individual IAM users with appropriate permissions for day-to-day tasks and avoid using the root user.
+                              There are certain tasks that require root user access, such as changing account settings or closing the account or accessing AWS GovCloud.`
+            }
+          ]
+        },
+        {
+          "name": "Services",
+          "services": [
+            {
+              "title": "AWS IAM Identity Center",
+              "description": `used to be called AWS Single Sign- On(SSO).It is a cloud - based service that makes it easy to centrally manage SSO access to multiple AWS accounts
+                              and business applications.With IAM Identity Center, you can create or connect your workforce identities and manage their access to AWS resources and applications from a single place.`
+            },
+            {
+              "title": "Identity and Access Management (IAM)",
+              "description": `Manage access to services and resouces in the AWS cloud.
+                              Manage users, groups, roles, and permissions to securely control access to AWS resources.
+                              Can provide access to users or other AWS services.
+                              Permissions are globally applied across all AWS Regions.
+                              Follow the principle of least privilege when granting permissions.
+                              Manage Users, IAM roles, and Federated users
+
+                              Manage Users: individuals who need access to AWS resources and are assigned unique credentials.
+                              Manage Roles: Create roles to manage permissions and what those roles can do.An entity assumes a roles to obtain temporary access to the permissions defined in the role's policies.
+                                            Used to provide a user from another AWS account with access to your AWS resources.
+                              Manage Federated Users: Enable identity federation: allow existing identities in your enterprise to access AWS without having to create an IAM user for each identity.Can use any identity management solution that uses SAML 2.0 or one of the AWS federation samples`
+            },
+            {
+              "title": "AWS Secrets Manager",
+              "description": `Saves all your "secrets" such as database credentials, API keys, and other sensitive information.`
+            },
+            {
+              "title": "AWS Systems Manager",
+              "description": `A centralized service that helps you manage your AWS resources and applications in multi cloud and hybrid environments.
+                              Can operate multiple AWS services from a single interface, and automate operational tasks across your AWS resources.
+                              For IT administrators, it provides a unified interface to view operational data from multiple AWS services and allows you to automate operational tasks across your AWS resources.`
+            },
+            {
+              "title": "AWS Web Application Firewall (WAF)",
+              "description": `Filters incoming traffic for the signal of bad actors
+                              Has machine learning capabilities and recognize new threats as it evolves
+                              Protects your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.
+                              It allows you to create custom rules to block common attack patterns, such as SQL injection or cross-site scripting (XSS), and rules that are designed for specific applications, such as WordPress.
+                              Protects web applications againts exploits that could compromize security, affect availability, or consume excessive resources.
+                              Improves web traffic filtering and monitoring capabilities to help protect against common web exploits.`
+            },
+            {
+              "title": "AWS Shield",
+              "description": `Protects applications running on AWS against **DDoS attacks**. It provides always-on detection and automatic inline mitigations that minimize application downtime and latency.
+                              **AWS Shield Standard** provides protection against common network and transport layer DDoS attacks at **no additional cost**. Free to use and automatically protects all AWS customers from DDoS attacks.
+
+                              **AWS Shield Advanced** offers enhanced DDoS attack protection for applications running on AWS, including additional detection and mitigation capabilities, **24/7 access to the AWS DDoS Response Team (DRT)**, and **financial protections** against DDoS-related costs.
+                                                      Integrates with AWS WAF for more granular control over web traffic and provides real-time attack visibility through AWS CloudWatch metrics and reports.
+                                                      Available globally on all CloudFront and Route 53 resources, and on Elastic Load Balancing, Amazon EC2, and Amazon Global Accelerator resources in supported regions.`
+            },
+            {
+              "title": "AWS Inspector",
+              "description": `Automated security assessment service that helps improve the **security and compliance** of applications deployed on AWS.
+                              It automatically assesses applications for vulnerabilities or deviations from best practices, and provides detailed findings and recommendations for remediation.
+                              After the assessment is complete, it generates a detailed report with findings and recommendations for remediation, which can be used to improve the security posture of your applications.
+                              You can define your own **standard and best practices, or use predefined templates provided by AWS.**`
+            },
+            {
+              "title": "AWS Trusted Advisor",
+              "description": `Guides provisioning of resouces to follow AWS best practices.
+                              Scans your infrastructure and provides real-time recommendations to help you optimize your AWS environment for cost, performance, security, and fault tolerance.
+                              Based on five categories: cost optimization, performance, security, fault tolerance, and service limits.
+                              It provides recommendations to help you optimize your AWS environment in these areas.
+
+                              **Seven Core trusted advisor checks**:
+                              **S3 bucket permissions**, security groups - open ports, IAM use, MFA on root account, EBS public snapshots, RDS public snapshots, and service limits.
+                              **Security groups** - specific ports unrestricted.
+                              **IAM use**: checks for unused IAM users, groups, roles, and access keys.
+                              **MFA on root account**: checks if MFA is enabled for the root account.
+                              **Elastic Block Store (EBS) public snapshots**: checks for EBS snapshots that are shared with the public.
+                              **Relational Database Service (RDS) public snapshots**: checks for RDS snapshots that are shared with the public.
+                              **Service limits**: checks for any service limits that have been exceeded or are close to being exceeded.
+
+                              **Full Trusted Advisor** checks are available to customers with Business or Enterprise support plans. More types of checks. Notifications through weekly updates. Set up automated actions in response to alerts using Cloudwatch.
+                              Customers with Basic or Developer support plans have access to a subset of Trusted Advisor checks, primarily focused on security and service limits.`
+            },
+            {
+              "title": "AWS GuardDuty",
+              "description": `24/7 threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts and workloads.
+                              Monitors for malicious or unauthorized behavior by analyzing data from AWS CloudTrail event logs, Amazon VPC Flow Logs, and DNS logs.
+                              Uses machine learning, anomaly detection, and integrated threat intelligence to identify and prioritize potential threats.
+                              Analyzes events to send actionable alerts via Cloudwatch`
+            }
+          ]
+        },
+        {
+          "name": "Services 2",
+          "services": [
+            {
+              "title": "AWS Artifact",
+              "description": `Provides on-demand access to AWS's security and compliance reports and select online agreements.
+                              On-demand self-service portal for accessing AWS compliance documentation and AWS agreements and independent software vendor (ISV) compliance reports.
+                              Review, accept, and tract status of AWS agreements specific to your organizations industry.`
+            },
+            {
+              "title": "AWS Cloudwatch",
+              "description": `Observes and monitors application performance.
+                              Set alarms and automated actions to activate at predermined thresholds to automatically mitigate potential issues.`
+            },
+            {
+              "title": "AWS Cloudtrail",
+              "description": `Generates audit trails of every action taken by a user, role, or AWS service in your account.
+                              tracks what the user did, when they did it, and from where they did it.
+                              Provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.`
+            },
+            {
+              "title": "AWS Audit manager",
+              "description": `Automates evidence collection to help you audit your AWS usage and assess risk and compliance with regulations and industry standards.
+                              Generate audit-ready reports to prove system complince for audits`
+            },
+            {
+              "title": "AWS Config",
+              "description": `Provides detailed views of AWS resouce configurations in your AWS account.
+                              Tracks how configurations and relationships between resouces change over time.
+                              Can monitor configuration settings and send alerts when a resouce violdates your rules`
+            }
+          ]
+        },
+      ]
+    },
+    {
       "name": "Database",
       "groups": [
         {
@@ -42,12 +342,12 @@ const awsServicesData = {
             },
             {
               "title": "Amazon RDS test text",
-              "description": `A **managed relational database** service that handles routine tasks.
+              "description": `A ** managed relational database ** service that handles routine tasks.
 
-            ==Key Features:==
-            - **Multi-AZ deployment** for high availability
-            - **Automated backups** for data resilience
-            - Supports **MySQL, PostgreSQL, Oracle**, and more`
+            == Key Features:==
+            - ** Multi - AZ deployment ** for high availability
+            - ** Automated backups** for data resilience
+            - Supports ** MySQL, PostgreSQL, Oracle **, and more`
             }
           ]
         },
@@ -58,47 +358,47 @@ const awsServicesData = {
               "title": "Amazon Relational Database Service (Amazon RDS)",
               "description": `A managed relational database service that handles routine database tasks such as backups, patching, and hardware provisioning.
 
-                            Supports multiple database instance class types that optimize for memory, performance, or input/output (I/O).
+                            Supports multiple database instance class types that optimize for memory, performance, or input / output(I / O).
 
-                            To improve data resilience, Amazon RDS offers Multi-AZ deployment and automated backups. You can manually create backups using DB snapshots, which are full backups of your entire database instance, useful for specific point-in-time recovery or long-term data archiving purposes.
+                            To improve data resilience, Amazon RDS offers Multi - AZ deployment and automated backups.You can manually create backups using DB snapshots, which are full backups of your entire database instance, useful for specific point -in -time recovery or long - term data archiving purposes.
 
-                            Amazon RDS offers security features including network isolation, encryption in transit, and encryption at rest. You can readily scale database resources vertically or horizontally as needed.
+                            Amazon RDS offers security features including network isolation, encryption in transit, and encryption at rest.You can readily scale database resources vertically or horizontally as needed.
 
-                           **Supported database engines**
+                           ** Supported database engines **
                             Amazon RDS supports different database engines, including Amazon Aurora, MySQL, PostgreSQL, Microsoft SQL Server, MariaDB, and Oracle Database.
 
                             Use cases
-                            Some examples of practical use cases for Amazon RDS are web applications, enterprise workloads, and product inventories for e-commerce platforms.
+                            Some examples of practical use cases for Amazon RDS are web applications, enterprise workloads, and product inventories for e - commerce platforms.
 
                             Cost optimization
-                            Amazon RDS eliminates the high upfront costs of purchasing and maintaining database hardware infrastructure. You only pay for the compute and storage resources that you consume through a flexible pay-as-you-go model. As a managed service, it also reduces operational expenses by automating time-consuming administrative tasks like backups, patching, and monitoring.
+                            Amazon RDS eliminates the high upfront costs of purchasing and maintaining database hardware infrastructure.You only pay for the compute and storage resources that you consume through a flexible pay - as - you - go model.As a managed service, it also reduces operational expenses by automating time - consuming administrative tasks like backups, patching, and monitoring.
 
-                            Multi-AZ deployment
-                            Amazon RDS improves database reliability through Multi-AZ deployments. It automatically replicates data to a standby instance in a different Availability Zone. During system failures, maintenance, or zone disruptions, Amazon RDS automatically fails over to the standby instance without manual intervention. This ensures continuous database operations with minimal downtime.
+                            Multi - AZ deployment
+                            Amazon RDS improves database reliability through Multi - AZ deployments.It automatically replicates data to a standby instance in a different Availability Zone.During system failures, maintenance, or zone disruptions, Amazon RDS automatically fails over to the standby instance without manual intervention.This ensures continuous database operations with minimal downtime.
 
                             Performance optimization
-                            Amazon RDS enhances database performance through automated management of resource allocation, monitoring, and optimization tasks. It includes features like automated backups and read replicas that can help offload read traffic from the primary instance. Amazon RDS performance insights provide real-time monitoring and analysis of database load, to help you identify and resolve performance bottlenecks quickly.
+                            Amazon RDS enhances database performance through automated management of resource allocation, monitoring, and optimization tasks.It includes features like automated backups and read replicas that can help offload read traffic from the primary instance.Amazon RDS performance insights provide real - time monitoring and analysis of database load, to help you identify and resolve performance bottlenecks quickly.
 
                             Security controls
-		                    Amazon RDS enhances database security through multiple layers of protection, including VPC isolation as well as encryption at rest and in transit. It leverages automated backups and offers Multi-AZ deployments to provide resiliency against potential system failures.`
+		                    Amazon RDS enhances database security through multiple layers of protection, including VPC isolation as well as encryption at rest and in transit.It leverages automated backups and offers Multi - AZ deployments to provide resiliency against potential system failures.`
             },
             {
               "title": "Amazon Aurora",
-              "description": `Aurora is a managed relational database designed to help reduce unnecessary I/O operations. It's compatible with **MySQL and PostgreSQL**, provides high performance and availability, and automatically scales alongside your workloads. Aurora replicates data across multiple Availability Zones for enhanced durability and fault tolerance, and features automated backups, encryption at rest, and continuous monitoring.
+              "description": `Aurora is a managed relational database designed to help reduce unnecessary I / O operations.It's compatible with **MySQL and PostgreSQL**, provides high performance and availability, and automatically scales alongside your workloads. Aurora replicates data across multiple Availability Zones for enhanced durability and fault tolerance, and features automated backups, encryption at rest, and continuous monitoring.
 
                                 Use cases
-                                Some examples of practical use cases for Aurora are gaming applications, media and content management, and real-time analytics.
+                                Some examples of practical use cases for Aurora are gaming applications, media and content management, and real - time analytics.
 
                                 High performance and availability
-                                Aurora delivers up to five times the throughput of standard MySQL and three times the throughput of PostgreSQL. It uses a distributed storage system across multiple nodes to provide high performance and availability.
+                                Aurora delivers up to five times the throughput of standard MySQL and three times the throughput of PostgreSQL.It uses a distributed storage system across multiple nodes to provide high performance and availability.
 
                                 Automated storage and backup management
-                                Aurora automatically grows storage from **10 GB to 128 TB** based on your actual data usage, which eliminates guesswork in capacity planning. It also continuously backs up your database to Amazon Simple Storage Service (Amazon S3) to provide point-in-time recovery.
+                                Aurora automatically grows storage from ** 10 GB to 128 TB ** based on your actual data usage, which eliminates guesswork in capacity planning.It also continuously backs up your database to Amazon Simple Storage Service(Amazon S3) to provide point -in -time recovery.
 
                                 Advanced replication and fault tolerance
-                                Aurora replicates data across three Availability Zones with six copies of data, and provides 99.99% availability. It automatically detects database failures and redirects traffic to healthy replicas without data loss.
+                                Aurora replicates data across three Availability Zones with six copies of data, and provides 99.99 % availability.It automatically detects database failures and redirects traffic to healthy replicas without data loss.
 
-                                The Aurora distributed storage architecture offers up to five times the throughput of standard MySQL while maintaining compatibility. It was specifically designed to handle high transaction workloads by distributing I/O across multiple storage nodes`
+                                The Aurora distributed storage architecture offers up to five times the throughput of standard MySQL while maintaining compatibility.It was specifically designed to handle high transaction workloads by distributing I / O across multiple storage nodes`
             }
           ]
         },
@@ -107,9 +407,9 @@ const awsServicesData = {
           "services": [
             {
               "title": "NoSQL databases",
-              "description": `NoSQL databases are sometimes referred to as non-relational databases because their structures are different than relational databases like Amazon RDS. Instead of row and column relationships, NoSQL databases build a structure for the data that they contain using key-value pairs instead. With key-value pairs, data is organized into items identified by unique keys.
+              "description": `NoSQL databases are sometimes referred to as non - relational databases because their structures are different than relational databases like Amazon RDS.Instead of row and column relationships, NoSQL databases build a structure for the data that they contain using key-value pairs instead.With key - value pairs, data is organized into items identified by unique keys.
 
-                            Each key has one or more associated attributes, or values, that represent various characteristics of the data. You can think of a key as a word entry in a dictionary, and the value as its associated definition. Not every item in the table has to have the same attributes, and you can add or remove attributes at any time
+                            Each key has one or more associated attributes, or values, that represent various characteristics of the data.You can think of a key as a word entry in a dictionary, and the value as its associated definition.Not every item in the table has to have the same attributes, and you can add or remove attributes at any time
 
                             Name: John Doe
                             Address: 123 Any Street
@@ -117,25 +417,25 @@ const awsServicesData = {
             },
             {
               "title": "Amazon DynamoDB",
-              "description": `	DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance for both document and key-value data structures. It's a powerful and incredibly fast database option for use cases that require a flexible schema, and is ideal for applications that require high performance and seamless scaling.
+              "description": `	DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance for both document and key - value data structures.It's a powerful and incredibly fast database option for use cases that require a flexible schema, and is ideal for applications that require high performance and seamless scaling.
 
-                            DynamoDB seamlessly scales alongside your data without impacting performance, which means that you only pay for the resources that you use. It also includes built-in security features for enhanced protection, and automatically spreads your data across multiple servers to handle your workload.
+                            DynamoDB seamlessly scales alongside your data without impacting performance, which means that you only pay for the resources that you use.It also includes built -in security features for enhanced protection, and automatically spreads your data across multiple servers to handle your workload.
 
                             Use cases
                             Some examples of practical use cases for DynamoDB are gaming platforms, financial service applications, and mobile applications with global user bases.
 
 
                             Scalability with provisioned capacity
-                            DynamoDB automatically scales throughput up or down based on actual usage, which ensures consistent performance without manual intervention. You can specify target utilization levels, and DynamoDB automatically provisions capacity to maintain those targets. With no practical limits on table size or the amount of data stored, DynamoDB can seamlessly accommodate growing applications.
+                            DynamoDB automatically scales throughput up or down based on actual usage, which ensures consistent performance without manual intervention.You can specify target utilization levels, and DynamoDB automatically provisions capacity to maintain those targets.With no practical limits on table size or the amount of data stored, DynamoDB can seamlessly accommodate growing applications.
 
                             Consistent high performance
-                            DynamoDB delivers single-digit millisecond response times at any scale, which makes it ideal for high-performance applications. It maintains consistent performance by automatically distributing data across multiple servers and SSDs.
+                            DynamoDB delivers single - digit millisecond response times at any scale, which makes it ideal for high - performance applications.It maintains consistent performance by automatically distributing data across multiple servers and SSDs.
 
                             High availability and durability
-                            DynamoDB delivers 99.999% data availability by replicating data across three distinct facilities within each AWS Region. It also maintains multiple copies in separate AWS Regions, to provide built-in fault tolerance and data durability. This ensures continuous operation and protection against data loss even if individual facilities fail.
+                            DynamoDB delivers 99.999 % data availability by replicating data across three distinct facilities within each AWS Region.It also maintains multiple copies in separate AWS Regions, to provide built -in fault tolerance and data durability.This ensures continuous operation and protection against data loss even if individual facilities fail.
 
                             Data encryption
-                            DynamoDB offers comprehensive encryption capabilities to protect information both at rest and in transit. All data is automatically encrypted behind the scenes before being written to the storage layer. DynamoDB includes the flexibility to choose between different kinds of encryption keys for customized security control.`
+                            DynamoDB offers comprehensive encryption capabilities to protect information both at rest and in transit.All data is automatically encrypted behind the scenes before being written to the storage layer.DynamoDB includes the flexibility to choose between different kinds of encryption keys for customized security control.`
             }
           ]
         },
@@ -144,15 +444,15 @@ const awsServicesData = {
           "services": [
             {
               "title": "In-memory caches",
-              "description": `An in-memory cache is a high-speed storage layer that temporarily stores frequently accessed data in a computer's main memory, or RAM. Retrieving data from RAM provides extremely fast processing and retrieval speeds, often hundreds or thousands of times faster than traditional disk-based storage systems.
+              "description": `An in -memory cache is a high - speed storage layer that temporarily stores frequently accessed data in a computer's main memory, or RAM. Retrieving data from RAM provides extremely fast processing and retrieval speeds, often hundreds or thousands of times faster than traditional disk-based storage systems.
 
-                            When applications need specific information, they first check the cache before requesting it from the original data source. This reduces the load on primary databases and speeds up response times for end users. In-memory caches are ideal for storing session data, API responses, database query results, and other information that applications require repeatedly.`
+                            When applications need specific information, they first check the cache before requesting it from the original data source.This reduces the load on primary databases and speeds up response times for end users.In - memory caches are ideal for storing session data, API responses, database query results, and other information that applications require repeatedly.`
             },
             {
               "title": "Caching layer",
               "description": `	Reduce database volume
                             Storing frequency access data into a fast location
-                            Stored in system mermory (cache)
+                            Stored in system mermory(cache)
                             Near - instantaneous access to data
                             Reduces strain on backend
                             Cache method
@@ -160,25 +460,25 @@ const awsServicesData = {
             },
             {
               "title": "Amazon ElastiCache",
-              "description": `	ElastiCache is a fully managed in-memory caching service that was built to help reduce the complexity of administering in-memory caching systems. This means that you can continue to use the same Redis, Valkey, or Memcached tools and configurations to scale your workloads. It automatically detects and replaces failed nodes, which makes it ideal for applications that need consistent high performance.
+              "description": `	ElastiCache is a fully managed in -memory caching service that was built to help reduce the complexity of administering in -memory caching systems.This means that you can continue to use the same Redis, Valkey, or Memcached tools and configurations to scale your workloads.It automatically detects and replaces failed nodes, which makes it ideal for applications that need consistent high performance.
 
                                 Use cases
                                 Some examples of practical use cases for ElastiCache are session data management, database query enhancement, and gaming leaderboards.
 
                                 Benefits
                                 High performance for Redis, Valkey, or Memcached instances
-                                ElastiCache streamlines the deployment and maintenance of in-memory caching environments, offering high availability for Redis, Valkey, and Memcached by automatically handling hardware provisioning, software patching, and monitoring. ElastiCache offers seamless scalability so you can add or remove nodes as demand changes.
+                                ElastiCache streamlines the deployment and maintenance of in -memory caching environments, offering high availability for Redis, Valkey, and Memcached by automatically handling hardware provisioning, software patching, and monitoring.ElastiCache offers seamless scalability so you can add or remove nodes as demand changes.
 
 
                                 High availability
-                                ElastiCache provides high availability by constantly monitoring primary nodes for potential failures. When issues are detected, it maintains application availability while promoting a replica node to become the new primary without manual intervention. The entire recovery process typically finishes within minutes, which minimizes downtime and preserves operations during infrastructure disruptions.
+                                ElastiCache provides high availability by constantly monitoring primary nodes for potential failures.When issues are detected, it maintains application availability while promoting a replica node to become the new primary without manual intervention.The entire recovery process typically finishes within minutes, which minimizes downtime and preserves operations during infrastructure disruptions.
 
 
                                 Replication across multiple Availability Zones
-                                ElastiCache enables automatic replication across multiple Availability Zones to protect against infrastructure failures. You can configure primary and replica nodes across different Availability Zones according to their durability requirements. This helps to ensure that data remains accessible even if one zone experiences an outage.
+                                ElastiCache enables automatic replication across multiple Availability Zones to protect against infrastructure failures.You can configure primary and replica nodes across different Availability Zones according to their durability requirements.This helps to ensure that data remains accessible even if one zone experiences an outage.
 
                                 Data encryption
-                                ElastiCache supports data encryption mechanisms to safeguard sensitive information throughout its lifecycle. At-rest encryption protects data while stored in disk storage and automated backups. In-transit encryption secures data traveling between clients and cache nodes by employing transport layer security, or TLS, for encrypted connections.`
+                                ElastiCache supports data encryption mechanisms to safeguard sensitive information throughout its lifecycle.At - rest encryption protects data while stored in disk storage and automated backups.In - transit encryption secures data traveling between clients and cache nodes by employing transport layer security, or TLS, for encrypted connections.`
             }
           ]
         },
@@ -187,63 +487,63 @@ const awsServicesData = {
           "services": [
             {
               "title": "Amazon DocumentDB",
-              "description": `	Amazon DocumentDB (with MongoDB compatibility) is fully managed service designed to handle semistructured data, which is information that doesn't conform to rigid relational schemas. Amazon DocumentDB is a MongoDB-compatible database, so it manages JSON-like documents with dynamic schemas.
+              "description": `	Amazon DocumentDB(with MongoDB compatibility) is fully managed service designed to handle semistructured data, which is information that doesn't conform to rigid relational schemas. Amazon DocumentDB is a MongoDB-compatible database, so it manages JSON-like documents with dynamic schemas.
 
-                                Amazon DocumentDB is perfect for applications requiring frequent schema changes and document-oriented data. Unlike relational databases or nonrelational databases, you can quickly iterate without relying on predefined schemas. Amazon DocumentDB can store, query, and index JSON data effortlessly, all while benefiting from automatic scaling, continuous backup, and enterprise-grade security features.
+                                Amazon DocumentDB is perfect for applications requiring frequent schema changes and document - oriented data.Unlike relational databases or nonrelational databases, you can quickly iterate without relying on predefined schemas.Amazon DocumentDB can store, query, and index JSON data effortlessly, all while benefiting from automatic scaling, continuous backup, and enterprise - grade security features.
 
                                 Use cases
                                 Some examples of practical use cases for Amazon DocumentDB are content management systems, catalog and inventory management, and user profile and personalization systems.
 
                                 Benefits
                                 MongoDB compatibility
-                                Amazon DocumentDB is fully compatible with MongoDB workloads and supports MongoDB APIs, drivers, and tools. This compatibility means that you can use existing MongoDB code and skills without modification. You can also migrate MongoDB applications to Amazon DocumentDB with minimal changes to their application code.
+                                Amazon DocumentDB is fully compatible with MongoDB workloads and supports MongoDB APIs, drivers, and tools.This compatibility means that you can use existing MongoDB code and skills without modification.You can also migrate MongoDB applications to Amazon DocumentDB with minimal changes to their application code.
 
                                 Performance and scalability
-                                Amazon DocumentDB automatically scales storage up to 64 TB in 10 GB increments based on your application needs. It can handle millions of requests per second with consistent performance. It also provides the option to scale compute resources up or down as needed.
+                                Amazon DocumentDB automatically scales storage up to 64 TB in 10 GB increments based on your application needs.It can handle millions of requests per second with consistent performance.It also provides the option to scale compute resources up or down as needed.
 
                                 Increased read throughput
-                                Amazon DocumentDB improves read throughput for high-volume applications by creating up to 15 replica instances that share underlying storage.
+                                Amazon DocumentDB improves read throughput for high - volume applications by creating up to 15 replica instances that share underlying storage.
 
                                 Storing and managing a large product catalog for an ecommerce application
                                 Amazon DocumentDB excels at handling semistructured data like product catalogs.`
             },
             {
               "title": "AWS Backup",
-              "description": `	AWS Backup streamlines data protection across various AWS resources and on-premises deployments by providing a single dashboard for monitoring and managing backups. It eliminates the complexity of managing multiple backup strategies by supporting multiple storage types, including Amazon Elastic Block Store (Amazon EBS) volumes, Amazon Elastic File System (Amazon EFS) file systems, and various databases.
+              "description": `	AWS Backup streamlines data protection across various AWS resources and on - premises deployments by providing a single dashboard for monitoring and managing backups.It eliminates the complexity of managing multiple backup strategies by supporting multiple storage types, including Amazon Elastic Block Store(Amazon EBS) volumes, Amazon Elastic File System(Amazon EFS) file systems, and various databases.
 
-                                AWS Backup centralizes and automates data protection processes, improving consistency and reducing administrative overhead. It offers flexible scheduling options, encryption capabilities, and cross-Region backup support for enhanced disaster recovery.
+                                AWS Backup centralizes and automates data protection processes, improving consistency and reducing administrative overhead.It offers flexible scheduling options, encryption capabilities, and cross - Region backup support for enhanced disaster recovery.
 
                                 Use cases
                                 Some examples of practical use cases for AWS Backup are centralized disaster recovery, consistent backup policies for compliance requirements, and consolidating multiple backup processes through a single interface.
 
                                 Centralized backup management
-                                AWS Backup provides a single dashboard to manage backups across multiple AWS services and accounts. You can monitor backup jobs, restore points, and verify compliance status from one central location to reduce operational complexity and potential configuration errors.
+                                AWS Backup provides a single dashboard to manage backups across multiple AWS services and accounts.You can monitor backup jobs, restore points, and verify compliance status from one central location to reduce operational complexity and potential configuration errors.
 
-                                You can create automated backup schedules that align with your business requirements and compliance needs. You can set up backup policies that automatically protect new resources as they're created.
+                                You can create automated backup schedules that align with your business requirements and compliance needs.You can set up backup policies that automatically protect new resources as they're created.
 
-                                Cross-region backup redundancy
-                                AWS Backup enables automatic replication of backup data across different AWS Regions for disaster recovery purposes. You can quickly restore data from secondary Regions if the primary Region experiences an outage. Cross-Region redundancy helps you meet compliance requirements while guaranteeing data accessibility during Regional failures.
+                                Cross - region backup redundancy
+                                AWS Backup enables automatic replication of backup data across different AWS Regions for disaster recovery purposes.You can quickly restore data from secondary Regions if the primary Region experiences an outage.Cross - Region redundancy helps you meet compliance requirements while guaranteeing data accessibility during Regional failures.
 
                                 Streamlined regulatory compliance
-                                AWS Backup maintains detailed audit logs and reports to demonstrate compliance with regulatory requirements. You can use it to enforce backup policies across your organization and track backup activities for security and compliance purposes.`
+                                AWS Backup maintains detailed audit logs and reports to demonstrate compliance with regulatory requirements.You can use it to enforce backup policies across your organization and track backup activities for security and compliance purposes.`
             },
             {
               "title": "Amazon Neptune",
-              "description": `	Neptune is a **fully managed**, purpose-built graph database service that manages highly connected data sets, like those used in social networking applications. It excels at understanding complex relationships that are difficult to identify in traditional relational databases like user connections, friend networks, and interaction patterns. Neptune can maintain high performance even as data complexity grows, and offers high availability with automatic failover and backups.
+              "description": `	Neptune is a ** fully managed **, purpose - built graph database service that manages highly connected data sets, like those used in social networking applications.It excels at understanding complex relationships that are difficult to identify in traditional relational databases like user connections, friend networks, and interaction patterns.Neptune can maintain high performance even as data complexity grows, and offers high availability with automatic failover and backups.
 
                                 Use cases
                                 Some examples of practical use cases for Amazon Neptune are social network user connection mapping, fraud detection systems, and search and recommendation systems.
 
-                                Purpose-built for complex relationships
-                                Neptune excels at storing and querying highly connected data using graph models. It supports both property graph and resource description framework, or RDF, models making it ideal for relationship mapping and pattern matching applications.
+                                Purpose - built for complex relationships
+                                Neptune excels at storing and querying highly connected data using graph models.It supports both property graph and resource description framework, or RDF, models making it ideal for relationship mapping and pattern matching applications.
 
                                 High performance and scalability
-                                Neptune delivers consistent performance at scale, processing billions of relationships in milliseconds. It automatically grows storage up to 64 TB based on your application needs. Its purpose-built engine optimizes graph queries to enable fast traversal of connected data points at scale.
+                                Neptune delivers consistent performance at scale, processing billions of relationships in milliseconds.It automatically grows storage up to 64 TB based on your application needs.Its purpose - built engine optimizes graph queries to enable fast traversal of connected data points at scale.
 
-                                Neptune provides low-latency and high-throughput performance for both read and write operations, making it suitable for real-time applications working with connected data.
+                                Neptune provides low - latency and high - throughput performance for both read and write operations, making it suitable for real - time applications working with connected data.
                                 Neptune is optimized for storing and querying highly connected data with millisecond latency.
 
-                                **A graph database service optimized for storing and querying highly connected data relationships**`
+                                ** A graph database service optimized for storing and querying highly connected data relationships ** `
             },
             {
               "title": "Amazon Quantum Ledger Database (QLDB)",
@@ -255,7 +555,7 @@ const awsServicesData = {
             },
             {
               "title": "Aws database accelerator options",
-              "description": `Dynamodb accelator (DAX) Cache layer for non relational data`
+              "description": `Dynamodb accelator(DAX) Cache layer for non relational data`
             }
           ]
         }
@@ -268,25 +568,41 @@ const awsServicesData = {
           "name": "Virtual Machines",
           "services": [
             {
-              "title": "Amazon EC2",
-              "description": "Elastic Compute Cloud provides secure, resizable compute capacity in the cloud. Wide selection of instance types optimized for different use cases."
+              "title": "Amazon EC2 (Elastic Compute Cloud)",
+              "description": `Elastic Compute Cloud provides secure, resizable compute capacity in the cloud. Wide selection of instance types optimized for different use cases.
+                              Offers a variety of pricing options, including on - demand, reserved, and spot instances, to help you optimize costs based on your workload requirements.
+
+                              **Instance types**
+                              - General purpose: balanced compute, memory, and networking resources for a wide range of applications.
+                              - Compute optimized: ideal for compute - intensive workloads that require high performance. Such scientific modeling, gaming servers, and high - performance web servers.
+                              - Memory optimized: designed for memory - intensive workloads that require high memory capacity. for Large in - memory databases, real - time big data analytics, and high - performance computing.
+                              - Storage optimized: optimized for workloads that require high, sequential read and write access to large data sets on local storage.
+                              - Accelerated computing: ideal for workloads that require hardware accelerators, such as GPUs or FPGAs, for machine learning, high - performance computing, and graphics processing.`
+
             },
             {
               "title": "Amazon Lightsail",
-              "description": "Easy-to-use virtual private server (VPS) with simple management. Includes everything you need to launch your project quickly."
+              "description": `Easy-to-use virtual private server (VPS) with simple management. Includes everything you need to launch your project quickly.`
             }
           ]
         },
         {
-          "name": "Containers",
+          "name": "Containers and Orchestration",
           "services": [
             {
-              "title": "Amazon ECS",
-              "description": "Elastic Container Service is a fully managed container orchestration service. Deep integration with AWS services for production workloads."
+              "title": "Amazon ECS (Elastic Container Service)",
+              "description": `Elastic Container Service is a fully managed container orchestration service. Deep integration with AWS services for production workloads.
+                              Helps you run and scale containerized applications on AWS with ease. It supports Docker containers and allows you to easily run and scale containerized applications using simple APIs.`
             },
             {
-              "title": "Amazon EKS",
-              "description": "Elastic Kubernetes Service makes it easy to run Kubernetes on AWS without managing the control plane. Certified Kubernetes conformant."
+              "title": "Amazon EKS (Elastic Kubernetes Service)",
+              "description": `An open source container orchestration service that makes it easy to deploy, manage, and scale containerized applications using Kubernetes on AWS.
+
+                              Elastic Kubernetes Service makes it easy to run Kubernetes on AWS without managing the control plane. Certified Kubernetes conformant.
+
+                              Amazon EKS is a fully managed Kubernetes service that makes it easy to run Kubernetes on AWS without needing to manage the Kubernetes control plane.
+                              It is certified Kubernetes conformant, which means you can use existing Kubernetes tools and plugins with Amazon EKS. With Amazon EKS,
+                              you can easily run and scale containerized applications using Kubernetes on AWS.`
             }
           ]
         },
@@ -393,16 +709,16 @@ const awsServicesData = {
 
                               For example, you provision a specific EC2 instance to start out.
                               And then, as you gain more information on your workload, you realize the instance is being underutilized.
-                              Are you stuck with it? No. You can switch to an instance with lower specs, which might actually be more cost-effective.
-                              Moreover, if you don’t need a service, deprovision it. Eliminate the cost.`
+                              Are you stuck with it ? No.You can switch to an instance with lower specs, which might actually be more cost - effective.
+                              Moreover, if you don’t need a service, deprovision it.Eliminate the cost.`
             },
             {
               "title": "Sustainability",
               "description": `
-                              It emphasizes designing energy-efficient systems and minimizing **environmental impact**.
-                              This pillar encourages using the most appropriate AWS infrastructure to reduce the need for always-on resources.
+                              It emphasizes designing energy - efficient systems and minimizing ** environmental impact **.
+                              This pillar encourages using the most appropriate AWS infrastructure to reduce the need for always - on resources.
 
-                              For example, if you don’t need an always-on EC2 instance, consider switching to AWS Lambda.
+                              For example, if you don’t need an always - on EC2 instance, consider switching to AWS Lambda.
                               Or maybe using a smaller Amazon RDS instance if you don’t need that extra storage.
                               Not only are you reducing cost, but you can lower energy consumption and carbon emissions.`
             }
@@ -418,52 +734,52 @@ const awsServicesData = {
             {
               "title": "AWS CAF transformations domain",
               "description": `each domain transformation enables the next transformation
-                              **Technological transformations**: refers to utilizing the cloud to migrate and modernize legacy infrastructure, application, and data and analytics platforms.
-                              **Process transformations**: talks about digitizing, automating, and optimizing business operations.
-                              **Organizational transformation**: reimagines the organizational model or how your business and technology teams work together to create customer value and meet strategic goals.
-                              **Product transformation**: reimagines the business model by creating new value proposition and revenue models. `
+                              ** Technological transformations **: refers to utilizing the cloud to migrate and modernize legacy infrastructure, application, and data and analytics platforms.
+                              ** Process transformations **: talks about digitizing, automating, and optimizing business operations.
+                              ** Organizational transformation **: reimagines the organizational model or how your business and technology teams work together to create customer value and meet strategic goals.
+                              ** Product transformation **: reimagines the business model by creating new value proposition and revenue models. `
             },
             {
               "title": "AWS CAF Functional and business stake holders/ perspectives and foundational",
               "description": `enables the transformation chain
-                              **Business perspective**: makes sure that IT aligns with business needs and that IT investments link to key business results.
-                                  Use the Business perspective to create a strong business case for cloud adoption and prioritize cloud adoption initiatives. Make sure that your business strategies and goals align with your IT strategies and goals.
-                                  stake holders: business managers, strategists, and finance managers. CEO, CFO, COO
+                                  ** Business perspective **: makes sure that IT aligns with business needs and that IT investments link to key business results.
+                                  Use the Business perspective to create a strong business case for cloud adoption and prioritize cloud adoption initiatives.Make sure that your business strategies and goals align with your IT strategies and goals.
+                                  stake holders: business managers, strategists, and finance managers.CEO, CFO, COO
                                   ensure that the cloud investments link to key business results and outcomes.
 
-                              **People perspective**: supports development of an organization-wide change management strategy for successful cloud adoption.
-                                  Use the People perspective to evaluate organizational structures and roles, assess new skill and process requirements, and identify gaps. This helps prioritize training, staffing, and organizational changes.
+                              ** People perspective **: supports development of an organization - wide change management strategy for successful cloud adoption.
+                                  Use the People perspective to evaluate organizational structures and roles, assess new skill and process requirements, and identify gaps.This helps prioritize training, staffing, and organizational changes.
                                   create a culture that embraces change and innovation.
-                                  stake holders: human resources managers, Staffing, and oPeople managers .
+                                  stake holders: human resources managers, Staffing, and oPeople managers.
 
-                              **Governance perspective**: focuses on skills and processes to align IT strategy with business strategy. This perspective helps you maximize business value and minimize risks.
-                                  Use it to understand how to update the staff skills and processes necessary to maintain business governance in the cloud. Manage and measure cloud investments to evaluate business outcomes.
-                                  Maximize organizational benefits while minimizing cloud-transformation risks.
-                                  stake holders: Chief information officer (CIO), Program managers, project managers, and legal counsels.
+                              ** Governance perspective **: focuses on skills and processes to align IT strategy with business strategy.This perspective helps you maximize business value and minimize risks.
+                                  Use it to understand how to update the staff skills and processes necessary to maintain business governance in the cloud.Manage and measure cloud investments to evaluate business outcomes.
+                                  Maximize organizational benefits while minimizing cloud - transformation risks.
+                                  stake holders: Chief information officer(CIO), Program managers, project managers, and legal counsels.
 
-                              **Platform perspective**: includes principles and patterns for implementing new solutions in the cloud and migrating on-premises workloads to the cloud.
-                                  Use a variety of architectural models to understand and communicate the structure of IT systems and their relationships. Describe the architecture of the target state environment in detail.
-                                  Build enterprise-grade scalable, hybrid cloud platforms, implement cloud-native solutions and modernize existing infrastructure.
+                              ** Platform perspective **: includes principles and patterns for implementing new solutions in the cloud and migrating on - premises workloads to the cloud.
+                                  Use a variety of architectural models to understand and communicate the structure of IT systems and their relationships.Describe the architecture of the target state environment in detail.
+                                  Build enterprise - grade scalable, hybrid cloud platforms, implement cloud - native solutions and modernize existing infrastructure.
                                   Stake holders: infrastructure architects, IT managers, application architects, and DevOps engineers.
 
-                              **Security perspective**: makes sure that the organization meets security objectives for visibility, auditability, control, and agility.
+                              ** Security perspective **: makes sure that the organization meets security objectives for visibility, auditability, control, and agility.
                                   Use AWS CAF to structure the selection and implementation of security controls that meet the organization's needs.
                                   Achive the confidentiality, integrity, and availability of data and systems in the cloud.
-                                  Stake holders: chief information security officers (CISOs), security architects, and security analysts.
+                                  Stake holders: chief information security officers(CISOs), security architects, and security analysts.
 
-                              **Operations perspective**: helps you to enable, run, use, operate, and recover IT workloads to the level agreed upon with your business stakeholders.
-                                  Define how day-to-day, quarter-to-quarter, and year-to-year business is conducted. Align with and support the operations of the business. AWS CAF helps these stakeholders define current operating procedures and identify the process changes and training needed to implement successful cloud adoption.
+                              ** Operations perspective **: helps you to enable, run, use, operate, and recover IT workloads to the level agreed upon with your business stakeholders.
+                                  Define how day - to - day, quarter - to - quarter, and year - to - year business is conducted.Align with and support the operations of the business.AWS CAF helps these stakeholders define current operating procedures and identify the process changes and training needed to implement successful cloud adoption.
                                   Ensure that the cloud services delivered meet business needs.
-                                  Stake holders: IT operations managers, IT support managers, IT support staff, and site reliability engineers (SREs).
+                                  Stake holders: IT operations managers, IT support managers, IT support staff, and site reliability engineers(SREs).
                                   `
             },
             {
               "title": "AWS CAF Phases",
               "description": ` transformation journey to adopting the cloud
-                              **Envision Phase**: Demonstrate how cloud adoption will help accelerate business outcomes and objectives.
-                              **Align Phase**: Identify capabilities gaps acress the six CAF perspectives, identifty cross-organization dependencies, and recognize stakeholder concerns.
-                              **Launch Phase**: Deliver polot initizitve in production and demonstrate incremental business value before scaling to full production.
-                              **Scale Phase**: Expands pilots, scaling up to meet desired business needs while sustaining business benefits.
+                              ** Envision Phase **: Demonstrate how cloud adoption will help accelerate business outcomes and objectives.
+                              ** Align Phase **: Identify capabilities gaps acress the six CAF perspectives, identifty cross - organization dependencies, and recognize stakeholder concerns.
+                              ** Launch Phase **: Deliver polot initizitve in production and demonstrate incremental business value before scaling to full production.
+                              ** Scale Phase **: Expands pilots, scaling up to meet desired business needs while sustaining business benefits.
                               `
             },
           ]
@@ -478,7 +794,7 @@ const awsServicesData = {
           "services": [
             {
               "title": "Software as a Service (SaaS)",
-              "description": `users have the flexibility to migrate existing resouces to the cloud, and/or build new apps within the cloud environment.
+              "description": `users have the flexibility to migrate existing resouces to the cloud, and / or build new apps within the cloud environment.
                               completed products manged by the service
                               Easy to use – no need to manage underlying infrastructure
                               Least flexability
@@ -505,9 +821,9 @@ const awsServicesData = {
           "name": "Cloud computing deployment models",
           "services": [
             {
-              "title": "Public Cloud",
-              "description": `users have the flexibility to migrate existing resouces to the cloud, and/or build new apps within the cloud environment.
-                              100% cloud based infrastructure
+              "title": "Public Cloud/ Cloud Native",
+              "description": `users have the flexibility to migrate existing resouces to the cloud, and / or build new apps within the cloud environment.
+                              100 % cloud based infrastructure
                               All applications and data are hosted on the cloud providers infrastructure`
             },
             {
@@ -519,13 +835,13 @@ const awsServicesData = {
                               Infrastructure is hosted within the organizations own facilities similar to traditional IT infrastructure
 
                               Pros - full control over hardawre and software and data
-                              Cons hight upfront cost. Limited scalability `
+                              Cons hight upfront cost.Limited scalability `
             },
             {
               "title": "Hybrid Cloud",
-              "description": `cloud based and on premise work together. Good when legacy applications must remain on premise due to maintenance preferences or regalatory requeirements
+              "description": `cloud based and on premise work together.Good when legacy applications must remain on premise due to maintenance preferences or regalatory requeirements
 
-                              A company might retain regulated legacy applications on-premise while using cloud services for advanced data processing and analytics
+                              A company might retain regulated legacy applications on - premise while using cloud services for advanced data processing and analytics
 
                               Common use case - running the customer facing apes in the cloud while keeping financial data on premise
                               company using cloud storage for backup and disaster recovery of on premise data
@@ -540,7 +856,7 @@ const awsServicesData = {
             {
               "title": "Trade fixed expense for variable expense",
               "description": `Instead of investing hardware and staff and upkeep to make sure everything is running smoothly
-                              Aws cost will be variable from month to month. Billed only on what you use. When testing you do not need to invest immediately `
+                              Aws cost will be variable from month to month.Billed only on what you use.When testing you do not need to invest immediately `
             },
             {
               "title": "Benefit from massive economies of scale ",
@@ -551,14 +867,14 @@ const awsServicesData = {
             {
               "title": "Stop guessing capacity ",
               "description": `You estimate a number of people in a year in your business so you purchase a set of hardware.
-                                What if the next year ther are less users? You are stuck with the hardware
-                                What if the next year there are more users? You won't be able to handle  the users
-                              In aws scaling takes minutes. You can scale up and down resouces based on the amount of users `
+                                What if the next year ther are less users ? You are stuck with the hardware
+                                What if the next year there are more users ? You won't be able to handle  the users
+                              In aws scaling takes minutes.You can scale up and down resouces based on the amount of users `
             },
             {
               "title": "Increase speed and agility  ",
               "description": `You can create test environments to experiement
-                              After testing you can delete the provision/resouces and cost
+                              After testing you can delete the provision / resouces and cost
                               You can rapidly deploy applications and services, accelerating time to market and facilitating quicker responses to chnaing business needs and market conditions. `
             },
             {
@@ -569,7 +885,7 @@ const awsServicesData = {
             {
               "title": "Go global in minutes  ",
               "description": `Aws has servers in different region
-                              When on without aws it takes months and years to expand a business to different areas `
+                              When on without aws it takes months and years to expand a business to different areas`
             }
           ]
         },
@@ -708,7 +1024,7 @@ function openModal(title, description) {
       // Replace single line breaks within paragraphs with <br>
       const formattedPara = para.replace(/\n/g, '<br>');
       // Apply text formatting (bold, highlight)
-      return `<p>${formatText(formattedPara)}</p>`;
+      return `< p > ${formatText(formattedPara)}</p > `;
     })
     .join('');
 
