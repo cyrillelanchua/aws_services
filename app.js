@@ -338,7 +338,13 @@ const awsServicesData = {
             },
             {
               "title": "AWS Database migration service (DMS)",
-              "description": "Help make migration smooth Minimizing application downtime during database migrations \n\nA key benefit of AWS DMS is that the source database remains fully operational during migration, which minimizes downtime to applications."
+              "description": `Help make migration smooth Minimizing application downtime during database migrations
+                              A key benefit of AWS DMS is that the source database remains fully operational during migration, which minimizes downtime to applications.`
+            },
+            {
+              "title": "AWS Schema conversion tool (SCT)",
+              "description": `Helps convert your database schema from one database engine to another.
+                              A key benefit of AWS SCT is that it simplifies the process of migrating databases to AWS, reducing the time and effort required for schema conversion.`
             },
             {
               "title": "Amazon RDS test text",
@@ -356,7 +362,7 @@ const awsServicesData = {
           "services": [
             {
               "title": "Amazon Relational Database Service (Amazon RDS)",
-              "description": `A managed relational database service that handles routine database tasks such as backups, patching, and hardware provisioning.
+              "description": `A managed relational database service that handles routine database tasks such as backups, patching, and hardware provisioning. You can deploy on-premises with Amazon RDS on AWS Outposts.
 
                             Supports multiple database instance class types that optimize for memory, performance, or input / output(I / O).
 
@@ -380,11 +386,12 @@ const awsServicesData = {
                             Amazon RDS enhances database performance through automated management of resource allocation, monitoring, and optimization tasks.It includes features like automated backups and read replicas that can help offload read traffic from the primary instance.Amazon RDS performance insights provide real - time monitoring and analysis of database load, to help you identify and resolve performance bottlenecks quickly.
 
                             Security controls
-		                    Amazon RDS enhances database security through multiple layers of protection, including VPC isolation as well as encryption at rest and in transit.It leverages automated backups and offers Multi - AZ deployments to provide resiliency against potential system failures.`
+		                        Amazon RDS enhances database security through multiple layers of protection, including VPC isolation as well as encryption at rest and in transit.It leverages automated backups and offers Multi - AZ deployments to provide resiliency against potential system failures.`
             },
             {
               "title": "Amazon Aurora",
-              "description": `Aurora is a managed relational database designed to help reduce unnecessary I / O operations.It's compatible with **MySQL and PostgreSQL**, provides high performance and availability, and automatically scales alongside your workloads. Aurora replicates data across multiple Availability Zones for enhanced durability and fault tolerance, and features automated backups, encryption at rest, and continuous monitoring.
+              "description": `Aurora is a Fully managed relational database engine designed to help reduce unnecessary I / O operations.It's compatible with **MySQL and PostgreSQL**, provides high performance and availability, and automatically scales alongside your workloads. Aurora replicates data across multiple Availability Zones for enhanced durability and fault tolerance, and features automated backups, encryption at rest, and continuous monitoring.
+                                **One of the database engines supported by Amazon RDS.**
 
                                 Use cases
                                 Some examples of practical use cases for Aurora are gaming applications, media and content management, and real - time analytics.
@@ -417,13 +424,12 @@ const awsServicesData = {
             },
             {
               "title": "Amazon DynamoDB",
-              "description": `	DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance for both document and key - value data structures.It's a powerful and incredibly fast database option for use cases that require a flexible schema, and is ideal for applications that require high performance and seamless scaling.
+              "description": `DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance for both document and key - value data structures.It's a powerful and incredibly fast database option for use cases that require a flexible schema, and is ideal for applications that require high performance and seamless scaling.
 
                             DynamoDB seamlessly scales alongside your data without impacting performance, which means that you only pay for the resources that you use.It also includes built -in security features for enhanced protection, and automatically spreads your data across multiple servers to handle your workload.
 
                             Use cases
                             Some examples of practical use cases for DynamoDB are gaming platforms, financial service applications, and mobile applications with global user bases.
-
 
                             Scalability with provisioned capacity
                             DynamoDB automatically scales throughput up or down based on actual usage, which ensures consistent performance without manual intervention.You can specify target utilization levels, and DynamoDB automatically provisions capacity to maintain those targets.With no practical limits on table size or the amount of data stored, DynamoDB can seamlessly accommodate growing applications.
@@ -461,6 +467,7 @@ const awsServicesData = {
             {
               "title": "Amazon ElastiCache",
               "description": `	ElastiCache is a fully managed in -memory caching service that was built to help reduce the complexity of administering in -memory caching systems.This means that you can continue to use the same Redis, Valkey, or Memcached tools and configurations to scale your workloads.It automatically detects and replaces failed nodes, which makes it ideal for applications that need consistent high performance.
+                                Fully managed redis and memcache compatible service.
 
                                 Use cases
                                 Some examples of practical use cases for ElastiCache are session data management, database query enhancement, and gaming leaderboards.
@@ -479,6 +486,14 @@ const awsServicesData = {
 
                                 Data encryption
                                 ElastiCache supports data encryption mechanisms to safeguard sensitive information throughout its lifecycle.At - rest encryption protects data while stored in disk storage and automated backups.In - transit encryption secures data traveling between clients and cache nodes by employing transport layer security, or TLS, for encrypted connections.`
+            },
+            {
+              "title": "Amazon MemoryDB for Redis",
+              "description": `Provides support quick reads and writes for scalability that can power mobile and web applications.`
+            },
+            {
+              "title": "Amazon Dynamodb Accelerator (DAX)",
+              "description": `Managed in memory cache for DynamoDB that delivers up to a 10x performance improvement for read - intensive workloads.`
             }
           ]
         },
@@ -556,6 +571,14 @@ const awsServicesData = {
             {
               "title": "Aws database accelerator options",
               "description": `Dynamodb accelator(DAX) Cache layer for non relational data`
+            },
+            {
+              "title": "Amazon Redshift",
+              "description": `Fully managed - no server to provision or manage
+                              **Petabyte scale** data warehousing service in the cloud
+                              Faster and cheaper than other warehousing solutions
+                              **Data warehouse**: stores extremely large amounts of data and is optimized for complex queries and analysis.
+                              Secure, quick to set-up, and easy to scale.`
             }
           ]
         }
@@ -582,13 +605,24 @@ const awsServicesData = {
             },
             {
               "title": "Amazon Lightsail",
-              "description": `Easy-to-use virtual private server (VPS) with simple management. Includes everything you need to launch your project quickly.`
+              "description": `Easy-to-use virtual private server (VPS) with simple management. Includes everything you need to launch your project quickly.
+                              **Good for simple workfloads and users new to cloud computing.**
+                              Preconfigured and ready-to-use virtual private servers (VPS) that provide a simple way to launch and manage a virtual machine on AWS. It includes everything you need to get started, such as a virtual machine, SSD-based storage, data transfer, DNS management, and a static IP address.
+                              create website and run business software
+                              cost effective monthly fees
+                              one-click-to-launch services, including WordPress, Magento, and LAMP stack.
+                              easy to quickly deploy projects`
             }
           ]
         },
         {
           "name": "Containers and Orchestration",
           "services": [
+            {
+              "title": "containers",
+              "description": `Similar to virtual machines, but more lightweight and portable. They package applications and their dependencies together, allowing for consistent environments across development,
+                              testing, and production. Containers share the host system's kernel, making them more efficient than traditional virtual machines.`
+            },
             {
               "title": "Amazon ECS (Elastic Container Service)",
               "description": `Elastic Container Service is a fully managed container orchestration service. Deep integration with AWS services for production workloads.
@@ -607,15 +641,41 @@ const awsServicesData = {
           ]
         },
         {
+          "name": "Other services",
+          "services": [
+            {
+              "title": "AWS Elastic Beanstalk",
+              "description": ` Infrastructure as a code (IaC) service that makes it easy to deploy and manage applications in the AWS cloud.
+                              Handles deployment, capacity provisioning, load balancing, and **auto-scaling** for web applications. Supports multiple programming languages and platforms.
+                              accomodates services developed in Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
+
+                              Free to use, you only pay for the underlying AWS resources that your application consumes.
+                              allows manual management of infrastructure if you want more control, while still providing the benefits of a managed service.`
+            },
+            {
+              "title": "Elastic Load Balancing",
+              "description": `Automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses. Helps ensure high availability and fault tolerance.
+                              Fault tolerance and high availability: Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as Amazon EC2 instances, containers, and IP addresses.
+                              This helps ensure that your applications remain available and responsive even if some targets become unhealthy or unavailable.
+                              Monitors the health of servers`
+            }
+          ]
+        },
+        {
           "name": "Serverless",
           "services": [
             {
               "title": "AWS Lambda",
-              "description": "Run code without provisioning or managing servers. Pay only for the compute time you consume. Supports multiple programming languages."
+              "description": `Infrastructure as a code (IaC) service that makes it easy to deploy and manage applications in the AWS cloud.
+                              Run code without provisioning or managing servers. Automatically scales based on demand. Pay only for the compute time you consume.
+                              Event driven, serverless compute service that lets you run code without provisioning or managing servers. You can use AWS Lambda to run code for virtually any type of application or backend service with zero administration. Just upload your code, and Lambda takes care of everything required to run and scale your code with high availability. You pay only for the compute time you consume - there is no charge when your code is not running.`
             },
             {
               "title": "AWS Fargate",
-              "description": "Serverless compute engine for containers. Works with both ECS and EKS. Eliminates the need to provision and manage servers."
+              "description": `Serverless compute engine for **containers**. Works with both **ECS and EKS**. Eliminates the need to provision and manage servers.
+                              AWS Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS).
+                              With AWS Fargate, you no longer have to provision, configure, or manage virtual machines to run containers.
+                              WS Fargate eliminates the need to choose server types, decide when to scale your clusters, or optimize cluster packing. You can focus on designing and building your applications instead of managing the infrastructure that runs them.`
             }
           ]
         }
@@ -628,12 +688,43 @@ const awsServicesData = {
           "name": "Object Storage",
           "services": [
             {
-              "title": "Amazon S3",
-              "description": "Simple Storage Service offers industry-leading scalability, data availability, security, and performance. Store and retrieve any amount of data at any time."
+              "title": "Description",
+              "description": `Files are broken into pieces and stored as objects in buckets. Each object has a unique identifier and metadata.
+                              Ideal for unstructured data like **images, videos, and backups**.
+                              Good for **static data** that doesn't change frequently, and can be accessed via APIs.
+                              Components of an object storage system include **data**, **identifier**, and **metadata**.`
             },
             {
-              "title": "Amazon Glacier",
-              "description": "Low-cost cloud storage service for data archiving and long-term backup. Secure, durable, and extremely low-cost storage for data that is rarely accessed."
+              "title": "Amazon S3 (Simple Storage Service)",
+              "description": `Simple Storage Service offers industry-leading scalability, data availability, security, and performance. Store and retrieve any amount of data at any time.
+                              Has 99.999999999 % durability and 99.99 % availability of objects over a given year. Provides comprehensive security and compliance capabilities that meet even the most stringent regulatory requirements.`
+            },
+            {
+              "title": "Amazon Glacier (Glacier)",
+              "description": `Low-cost cloud storage service for data archiving and long-term backup. Secure, durable, and extremely low-cost storage for data that is rarely accessed.`
+            },
+            {
+              "title": "Amazon S3 Deep Archive (S3 Deep Archive)",
+              "description": `Lowest cost storage class for long-term data archiving that is accessed once or twice a year. Ideal for data that can be retained for 7-10 years or more, such as compliance archives and digital preservation.`
+            },
+            {
+              "title": "Amazon S3 Storage classes",
+              "description": `Amazon S3 offers a range of storage classes designed to meet different use cases and cost requirements.
+                                These include S3 Standard, S3 Intelligent-Tiering, S3 Standard-IA (Infrequent Access), S3 One Zone-IA (Infrequent Access), S3 on outpost, S3 Glacier (instant retrieval), S3 Glacier (flexible retrieval), and S3 Glacier Deep Archive.
+                                Each class provides varying levels of durability, availability, and cost.
+
+                                **S3 Standard**: general-purpose storage for frequently accessed data. Offers high durability and availability.
+                                **S3 Intelligent-Tiering**: automatically moves data to the most cost-effective access tier based on changing access patterns.
+                                **S3 Standard-IA**: for data that is accessed less frequently but requires rapid access when needed. Offers lower storage costs compared to S3 Standard. For data that is accessed monthly with millisecond retrieval.
+                                **S3 One Zone-IA**: for infrequently accessed data that can be stored in a single Availability Zone. For data that don't requrement multi-AZ redundancy. Offers lower cost than S3 Standard-IA but with less availability and durability.
+                                **S3 on outpost**: for data that needs to remain on-premises due to latency or data residency requirements. Offers the same durability and availability as S3 Standard.
+                                                    Object storage for on-premises AWS Outposts environments. Provides the same durability and low latency access as S3 in the cloud, but is designed for workloads that require data to remain on-premises due to latency or data residency requirements.
+
+                                **S3 Glacier (instant retrieval)**: for data archiving with retrieval times in milliseconds. Offers low-cost storage for data that is rarely accessed but requires immediate retrieval when needed.
+                                **S3 Glacier (flexible retrieval)**: for data archiving with retrieval times in minutes to hours. Offers low-cost storage for data that is rarely accessed and does not require immediate retrieval.
+                                                                      low-cost storage with low retrival fees for archived or backed-up data with 1-5 minutes, 3-5 hours, or 12 hours retrieval time.
+                                **S3 Glacier Deep Archive**: for long-term data archiving with retrieval times in hours. Offers the lowest cost storage option for data that is rarely accessed and can be retained for 7-10 years or more.
+                                                              12 or 48 hours retrieval time for long-term data archiving that is accessed once or twice a year.`
             }
           ]
         },
@@ -641,8 +732,25 @@ const awsServicesData = {
           "name": "Block Storage",
           "services": [
             {
-              "title": "Amazon EBS",
-              "description": "Elastic Block Store provides persistent block storage volumes for EC2 instances. Designed for workloads requiring low-latency access."
+              "title": "Description",
+              "description": `Stores data in units of blocks. Utilizes unique identifiers to access specific blocks.
+                              **When data is requested, the blocks are retrieved and assembled to form the complete file.**
+                              Ideal for databases and applications that require low-latency access to data.
+                              Provides high performance and is often used for boot volumes, databases, and applications that require consistent, low-latency storage.`
+            },
+            {
+              "title": "Amazon EBS (Elastic Block Store)",
+              "description": `Elastic Block Store provides persistent block storage volumes for EC2 instances. Designed for workloads requiring low-latency access.
+                              Raw unformatted blok device attached to an EC2 isntance. Can add multiple EBS volumnes to one EC2 instance.
+                              Automatically replicated within its availability zone.
+                              Persistent block storage volumes which do not disappear when the EC2 instance is stopped or terminated.
+                              Can be encrypted for data security.`
+            },
+            {
+              "title": "Amazon instance store",
+              "description": `Attached physically to the EC2 host, which provides high I/O performance
+                              Data is deleted when EC2 is stopped or terminated
+                              Block storage that is attached to EC2 `
             }
           ]
         },
@@ -650,12 +758,80 @@ const awsServicesData = {
           "name": "File Storage",
           "services": [
             {
-              "title": "Amazon EFS",
+              "title": "Description",
+              "description": `Files are stored in a hierarchical structure with directories and subdirectories. Ideal for shared file storage and applications that require a traditional file system interface.`
+            },
+            {
+              "title": "Amazon EFS (Elastic File System) **not complete**",
               "description": "Elastic File System provides simple, scalable, elastic file storage for use with AWS Cloud services and on-premises resources."
             },
             {
               "title": "Amazon FSx",
               "description": "Fully managed third-party file systems. Supports Windows File Server, Lustre, NetApp ONTAP, and OpenZFS."
+            }
+          ]
+        },
+        {
+          "name": "AWS Snow Family",
+          "services": [
+            {
+              "title": "Description",
+              "description": `AWS hybrid cloud service that extends AWS infrastructure and services into the edge, where customers physically reside.
+                              These are physical devices that are shipped to customers for data transfer and edge computing use cases.`
+            },
+            {
+              "title": "AWS Snowcone",
+              "description": `Tiny  at 4.5 lb, 8 TB of HDD storage and 14 TB of SSD storage, and 2 vCPUs with 4 GB of memory.
+                              Provides edge computing capabilities and data transfer for environments with limited space and power. Ideal for use cases like edge computing, data collection, and data transfer to AWS.
+                              Trasfer data back to AWS over the internet using AWS DataSync or AWS Snowball Edge.
+                              Ship device back to AWS for rapid offline data trasfer.`
+            },
+            {
+              "title": "AWS Snowball",
+              "description": `Medium size solution, weighing 45 lb, with 80-210 TB of storage , and 80-416 vCPUs with 10-42 TB of memory.
+                              Can choose between compute optimized or storage optimized.
+                              Transfer data to the device to ship back to AWS or utilize its compute capabilities to do local processing.`
+            },
+            {
+              "title": "AWS Snowmobile",
+              "description": `Exabyte-scale data transfer service used to move extremely large amounts of data to AWS.
+                              100 petabytes of data per Snowmobile, and can be used for data center migrations, disaster recovery, and large-scale data transfer projects.
+                              Snowmobile is a 45-foot long ruggedized shipping container, pulled by a semi-trailer truck.
+                              Ideal for large-scale data migrations, such as moving entire data centers to AWS.
+                              Both **AWS Snowball edge and AWS Snowmobile are HIPAA eligible**, and can be used for secure data transfer in compliance with healthcare regulations.`
+            }
+          ]
+        },
+        {
+          "name": "Other storage services",
+          "services": [
+            {
+              "title": "AWS storage gateway",
+              "description": `Hybrid storage solution.
+                              S3 -> storage gateway -> on premise storage
+                              Uses virtual machines to connect storage on-premises with AWS cloud storage. Provides seamless integration for backup, archiving, and disaster recovery use cases.
+                              Has 3 types of gateways: file gateway, volume gateway, and tape gateway.
+                              **File gateway**: Files stored as objects in S3, accessed via NFS or SMB protocols. One to one representation of files in S3 buckets. Ideal for file-based applications and backup use cases
+                                                Asynchronous updates as local files are updated. Local Cache to provide low-latency access to frequently accessed data.
+
+                              **Volume gateway**: Block storage volumes stored, accessed via iSCSI protocol. Volumes can be cached or stored entirely in the cloud. Ideal for applications that require low-latency access to data.
+                                                  Asynchronous backed up as point-in-time snapshots and stored as Elastic Block Store (EBS) snapshots in AWS. Local cache to provide low-latency access to frequently accessed data.
+                                                  Stored volume: complete copy on-premises and send snapshots to AWS.
+                                                  Cached volume: store frequently accessed data on-premises and asynchronously back up all data to AWS.
+
+                              **Tape gateway**: Virtual tape library (VTL) that stores virtual tapes in S3. Accessed via iSCSI protocol. Ideal for backup and archival use cases that require tape-based workflows.
+                                                Uses existing tape-based backup infrastructure to back up to virtual tapes.
+                                                Data stored locally, then asynchronously backed up to AWS. Virtual tapes can be archived in Amazon S3 Glacier for long-term retention.
+                                                Data can be archived in Amazon S3 Glacier for long-term retention.
+
+                              Pricing: you pay for storage and to access stored data. The quicker you can access the data, the more expensive it is.
+                                        For example data stored via tape gateway is much cheaper when saved to S3 Glacier Deep archive comapred to S3 Glacier`
+            },
+            {
+              "title": "AWS Backup",
+              "description": `Back up as a solution. Fully manged backup service that makes it easy to centralize and automate the backup of data across AWS services and on-premises environments. Provides a single dashboard to manage backups, set backup policies, and monitor backup activity.
+                              Exabyte scale.
+                              Provides data protection for AWS resources such as Amazon EBS volumes, Amazon RDS databases, Amazon DynamoDB tables, Amazon EFS file systems, and AWS Storage Gateway volumes. It also supports on-premises backup through the AWS Storage Gateway.`
             }
           ]
         }
