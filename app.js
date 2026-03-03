@@ -27,6 +27,109 @@ const awsServicesData = {
       ]
     },
     {
+      "name": "Management/monitoring tools",
+      "groups": [
+        {
+          "name": "services",
+          "services": [
+            {
+              "title": "Amazon CloudFormation",
+              "description": `Infrastructure as Code (IaC) service that allows you to define and provision AWS infrastructure using a declarative template format.
+
+                              Create templates for resource deployment in AWS. Provision and deploy fully configured infrastructure.
+                              Pay only the resources used in the templates and provision multi-region, multi-tier applications quickly with textfiles written json or yaml.
+
+                              Update or manage the template(stack) using aws management console, aws cli, or aws sdk. You can update the stack by modifying the template and applying the changes, which allows you to manage your infrastructure as code and maintain **version control** over your deployments.
+
+                              You can use CloudFormation to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.
+                              CloudFormation templates are JSON or YAML formatted text files that describe the AWS resources you want to create and their configurations.`
+            },
+            {
+              "title": "Amazon CloudTrail",
+              "description": `Monitoring and auditing of IT infrastructure for complience, user activity, and operational troubleshooting. Provides event history of AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.
+
+                              Log and monitor **account activity** and **event history**.
+                              Simplify auditing, security analysis, resource change tracking, and troubleshooting.
+
+                              Free review of account activities for the past **90 days**
+
+                              provide visibility into user/resource activities. Track action taken through AWS Management Console, AWS SDKs, command line tools, and other AWS services.
+                              **Automatically respond to security threats and operational issues.**
+
+                              Amazon CloudTrail is a service that enables governance, compliance, and operational and risk auditing of your AWS account.
+                              With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.
+
+                              CloudTrail provides event history of your AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services.
+                              This event history simplifies security analysis, resource change tracking, and troubleshooting.`
+            },
+            {
+              "title": "Amazon CloudWatch",
+              "description": `Monitoring and management system for AWS infrastructure.
+                              Natively integrate with over 70 AWS services.
+                              Gain system-wide visibility into **resource utilization, application performance, and operational health.**
+                              Can **react to events in real time, set alarms, and automatically react to changes in your AWS resources.**
+
+                              Amazon CloudWatch is a monitoring and observability service built for DevOps engineers, developers, site reliability engineers (SREs), and IT managers.
+                              It provides data and actionable insights to monitor applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health.
+
+                              CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services running on AWS and on-premises servers.
+                              You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly.`
+            }
+          ]
+        },
+      ]
+    },
+    {
+      "name": "Networking and content delivery",
+      "groups": [
+        {
+          "name": "Network services",
+          "services": [
+            {
+              "title": "Virtual Private Cloud (VPC)",
+              "description": `A Virtual Private Cloud (VPC) is a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define.
+                              You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
+                              VPCs provide security and isolation, allowing you to control inbound and outbound traffic to your resources.
+                              VPCs are isolated from other users and resources in the AWS cloud, providing a secure environment for your applications and data.
+
+                              **VPC are automatically created when you create an AWS account**, and you can create additional VPCs as needed. Each VPC can span multiple Availability Zones (AZs) within a region, providing high availability and fault tolerance for your applications. You can also connect your VPC to your on-premises network using VPN or AWS Direct Connect for hybrid cloud architectures.`
+            },
+            {
+              "title": "Amazon CloudFront",
+              "description": `Amazon CloudFront is a **content delivery network (CDN)** service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds.
+                              It integrates with other AWS services to provide a comprehensive solution for content delivery and security.
+
+                              CDN a system of distributed servers that deliver web content to users based on their geographic location, the origin of the content, and a content delivery server.
+                              CloudFront uses a global network of **edge locations** to cache and deliver content closer to end-users, improving performance and reducing latency.
+
+                              Makes loading websites/apps faster for users by caching content at **edge locations** around the world, reducing latency and improving performance.`
+            },
+            {
+              "title": "Amazon Route 53",
+              "description": `Connects users request to infrastructure running in AWS, such as Amazon EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 buckets, and can also be used to route users to infrastructure outside of AWS.
+
+                              Domain registration: You can register domain names directly through Route 53, making it easier to manage your domain and DNS settings in one place.
+                              Health checking: Route 53 can monitor the health of your resources and route traffic away from unhealthy resources to healthy ones, improving the availability of your applications.
+                              Traffic management: Route 53 offers various routing policies, such as simple routing, weighted routing, latency-based routing, and geolocation routing, allowing you to control how traffic is directed to your resources based on factors like performance and geographic location.
+
+                              Amazon Route 53 is a scalable and highly available **Domain Name System (DNS)** web service.
+                              It is designed to route end users to Internet applications by translating human-readable names, such as www.example.com, into the numeric IP addresses, such as 192.0.2.1, that computers use to connect to each other.`
+            },
+            {
+              "title": "Amazon Global Accelerator",
+              "description": `To direct traffic into the **AWS global network** instead of the **public internet**, which can improve performance and availability for your applications. Utilized **edge locations**.
+
+                              Kind of like a virtual toll road that allows your web traffic to bypass the traffic congestion on the public internet and take a more direct route to your application endpoints in AWS. This can result in lower latency and improved performance for your users, especially those located far from your application endpoints.
+
+                              Amazon Global Accelerator is a service that improves the availability and performance of your applications with local or global users.
+                              It provides static IP addresses that act as a fixed entry point to your application endpoints in one or more AWS Regions, such as Application Load Balancers, Network Load Balancers, and EC2 instances.
+                              Global Accelerator uses the AWS global network to optimize the path from your users to your application, improving performance and availability.`
+            }
+          ]
+        },
+      ]
+    },
+    {
       "name": "Deploying and operating the cloud",
       "groups": [
         {
@@ -47,11 +150,12 @@ const awsServicesData = {
               "title": "AWS SDKs (Software Development Kits)",
               "description": `AWS SDKs provide a set of libraries and tools for various programming languages to interact with AWS services.
                               They simplify the process of making API calls, handling authentication, and managing responses, allowing developers to integrate AWS services into their applications more easily.
-                              can be used with various programming languages, such as Python, Java, JavaScript, and more.
+                              They can be used with various programming languages, such as Python, Java, JavaScript, and more.
                               They provide a higher-level abstraction for interacting with AWS services, making it easier to integrate AWS functionality into applications.`
             }
           ]
         },
+
         {
           "name": "Infrastructure as code (IaC)",
           "services": [
@@ -60,20 +164,13 @@ const awsServicesData = {
               "description": `Infrastructure as Code (IaC) is the practice of managing and provisioning computing infrastructure through machine-readable configuration files,
                               rather than through physical hardware configuration or interactive configuration tools.
                               It allows for automation, version control, and consistency in managing infrastructure.
-                              examples AWS Elastic Beanstalk, AWS CloudFormation, AWS Lambda, and AWS CDK (Cloud Development Kit).`
+                              examples AWS CloudFormation, AWS Terraform, and AWS CDK (Cloud Development Kit).`
             },
           ]
         },
         {
           "name": "Connecting to the cloud",
           "services": [
-            {
-              "title": "Virtual Private Cloud (VPC)",
-              "description": `A Virtual Private Cloud (VPC) is a logically isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define.
-                              You have complete control over your virtual networking environment, including selection of your own IP address range, creation of subnets, and configuration of route tables and network gateways.
-                              VPCs provide security and isolation, allowing you to control inbound and outbound traffic to your resources.
-                              VPCs are isolated from other users and resources in the AWS cloud, providing a secure environment for your applications and data.`
-            },
             {
               "title": "Virtual Private Network (VPN)",
               "description": `A Virtual Private Network (VPN) extends a private network across a public network, allowing users to send and receive data as if their devices were directly connected to the private network.
@@ -322,6 +419,79 @@ const awsServicesData = {
                               Tracks how configurations and relationships between resouces change over time.
                               Can monitor configuration settings and send alerts when a resouce violdates your rules`
             }
+          ]
+        },
+      ]
+    },
+    {
+      "name": "AI/ML and analytics services",
+      "groups": [
+        {
+          "name": "AI/ML Services",
+          "services": [
+            {
+              "title": "Amazon SageMaker",
+              "description": `Fully managed machine learning service that helps you build, train, and deploy machine learning models quickly and easily. It provides a comprehensive set of tools and features to support the entire machine learning workflow, from data preparation to model deployment.
+                              Develop real-world applications: product recommendation features, robotics, voice-assisted devices`
+            },
+            {
+              "title": "Amazon Lex",
+              "description": `Build conversational interfaces using voice and text.
+                              Amazon Lex provides the deep functionality and flexibility of natural language understanding (NLU) and automatic speech recognition (ASR) to create engaging user experiences.
+
+                              Integrate voice assistance and chatbots to provide self-service customer service to your customers.`
+            },
+            {
+              "title": "Amazon Polly **(not done)**",
+              "description": `Turns text into lifelike speech using deep learning.
+                              Amazon Polly allows you to create applications that talk, and build entirely new categories of speech-enabled products.`
+            },
+            {
+              "title": "Amazon Kendra",
+              "description": `Utilizes machine learning to help find answers faster with intelligent search capabilities.
+                              Helps customers and employees find information they need when they need it, by utilizating natural langeuage processing (NLP) and machine learning to understand the context of the search query and provide relevant results. It can index and search unstructured data from various sources, such as documents, web pages, and databases, making it easier for users to find the information they need quickly and efficiently.
+
+                              A highly accurate and easy-to-use enterprise search service powered by machine learning.
+                              Amazon Kendra enables organizations to index and search unstructured and structured data across multiple sources, providing relevant answers to user queries.`
+            }
+          ]
+        },
+        {
+          "name": "Data Analytics Services",
+          "services": [
+            {
+              "title": "Amazon Athena",
+              "description": `Interactive query service that makes it easy to analyze data in **Amazon S3** using **standard SQL**.
+                              Amazon Athena is serverless, so there is no infrastructure to manage, and you pay only for the queries that you run.`
+            },
+            {
+              "title": "Amazon Kinesis",
+              "description": `Platform on AWS to collect, process, and analyze real-time, streaming data like video, audio, application logs, website clickstreams, and IoT telemetry data.
+                              Amazon Kinesis makes it easy to load and analyze streaming data, and also provides the ability to build custom streaming data applications for specialized needs.`
+            },
+            {
+              "title": "Amazon Glue",
+              "description": `Integrates data from over 70 diverse data sources and prepares the data for analytics by cleaning, enriching, and transforming it. It provides a serverless environment to run your extract, transform, and load (ETL) jobs, and you only pay for the resources consumed while running those jobs.
+
+                              Fully managed extract, transform, and load (ETL) service that makes it easy to prepare and load data for analytics.
+                              Amazon Glue simplifies and automates the difficult and time-consuming tasks of data discovery, conversion, mapping, and job scheduling.`
+            },
+            {
+              "title": "Amazon QuickSight",
+              "description": `**Business intelligence (BI)** service that makes it easy to create and publish interactive dashboards that include ML Insights.
+                              That help you quickly build **visualizations and perform ad-hoc analysis of your data**, and then publish the results to share with others.
+
+                              Amazon QuickSight can automatically scale to tens of thousands of users without any infrastructure to manage, and you pay only for what you use.`
+            },
+            {
+              "title": "Data Lake",
+              "description": `A centralized repository that allows you to store all your **structured and unstructured** data at any scale.
+                              AWS recommend using **Amazon S3** as the foundation for your data lake, because of its durability, scalability, and cost-effectiveness. Then use analytics services like Amazon Athena, Amazon Redshift, and Amazon EMR to analyze your data directly in the data lake without having to move it to a separate analytics system.
+
+                              You can use AWS Lake Formation to set up and manage your data lake, making it easier to ingest, catalog, clean, and secure your data.
+                              You can store your data as-is, without having to first structure it, and run different types of analytics—from dashboards and visualizations to big data processing,
+                              real-time analytics, and machine learning to guide better decisions.`
+            },
           ]
         },
       ]
@@ -838,6 +1008,629 @@ const awsServicesData = {
       ]
     },
     {
+      "name": "Other services",
+      "groups": [
+        {
+          "name": "Business Application services",
+          "services": [
+            {
+              "title": "Description",
+              "description": `These services help organizations meet customer needs`
+            },
+            {
+              "title": "Amazon SES (Simple Email Service) (not done)",
+              "description": `Amazon Simple Email Service (SES) is a cloud-based email sending service designed to help digital marketers and application developers send marketing, notification, and transactional emails.
+              It provides a reliable, scalable, and cost-effective way to send and receive email using your own email addresses and domains.
+                              SES integrates with other AWS services, making it easy to send emails from applications hosted on AWS.
+                              It offers features such as email authentication, dedicated IP addresses, and analytics to monitor email delivery and engagement.`
+            },
+            {
+              "title": "Amazon Connect (not done)",
+              "description": `Amazon Connect is a cloud-based contact center service that makes it easy to set up and manage a customer contact center. It provides a seamless experience for customers and agents, enabling efficient handling of customer interactions across multiple channels, including voice, chat, and email.
+                              Connect integrates with other AWS services to provide a comprehensive solution for customer engagement and support.
+
+                              It offers features such as automated call routing, real-time and historical analytics, and integration with CRM systems to improve customer service and operational efficiency.`
+            },
+          ]
+        },
+        {
+          "name": "Customer Engagement services",
+          "services": [
+            {
+              "title": "Description",
+              "description": `Customer engagement services at AWS engage with their customers throughout their lifecycle to provide the best customer service experience possible.`
+            },
+            {
+              "title": "AWS Activate for Startups (not done)",
+              "description": `provides smaller and more advanced startups free tools and resources to get up to speed quickly on AWS including AWS credits, support credits and AWS solution templates tailored to startup use cases.
+
+                              AWS Activate provides startups with resources they need to quickly get started on AWS, including credits, training, and support.
+                              It helps startups build and scale their applications on AWS by providing access to technical support, training, and a variety of AWS services.
+                              AWS Activate also offers a community of startups and experts to help guide and support new businesses.`
+            },
+            {
+              "title": "Amazon IQ (not done)",
+              "description": `links you up with AWS certified experts pre-vetted by AWS providing on-demand access to experts to help you complete projects faster.
+
+                              Amazon IQ is a service that provides insights and analytics to help businesses understand customer behavior and preferences. It enables organizations to make data-driven decisions to improve customer engagement and satisfaction.
+                              Amazon IQ integrates with other AWS services to provide a comprehensive solution for customer insights and analytics.
+
+                              It offers features such as real-time data processing, predictive analytics, and integration with CRM systems to enhance customer engagement and operational efficiency.`
+            },
+            {
+              "title": "AWS Managed Services (not done)",
+              "description": `AWS managed services or AMS provides infrastructure operations management for your AWS infrastructure with full lifecycle services to provision, run and support your infrastructure.
+
+                              AWS Managed Services (AMS) provides ongoing management of your AWS infrastructure, allowing you to focus on your applications and business. AMS helps you operate your AWS environment efficiently and securely by automating common activities such as change requests, monitoring, patch management, security, and backup services.
+                              It offers a range of services including infrastructure management, security and compliance, and operational support, helping organizations reduce operational overhead and improve reliability.`
+            },
+            {
+              "title": "AWS Support (not done)",
+              "description": `AWS Support and customer service resources are also a big part of AWS's customer engagement ecosystem with general support services,
+                              multiple self-service resources, and AWS support plans amongst many other resources to help you ask questions, troubleshoot,
+                              and help build infrastructure aligned with best practices.
+
+                              AWS Support provides a range of plans to help you optimize your AWS environment, resolve issues, and improve your cloud operations. It offers technical support, guidance, and best practices to ensure your applications run smoothly on AWS.
+                              AWS Support includes features such as 24/7 access to Cloud Support Engineers, proactive guidance, and access to AWS Trusted Advisor for best practice recommendations.`
+            },
+          ]
+        },
+        {
+          "name": "Developer Tools Services/Capabilities",
+          "services": [
+            {
+              "title": "Description",
+              "description": `These services help you version control your source code and build test and deploy your applications to AWS or your on premises environment.`
+            },
+            {
+              "title": "AWS AppConfig (not done)",
+              "description": `AWS AppConfig is a service that allows you to manage application configurations separately from your code. It helps you deploy application configurations in a controlled and monitored way, reducing the risk of errors and downtime.
+                              AppConfig integrates with other AWS services, making it easy to manage configurations for applications hosted on AWS.
+                              It offers features such as validation, deployment strategies, and monitoring to ensure configurations are applied safely and effectively.`
+            },
+            {
+              "title": "AWS Cloud9 (not done)",
+              "description": `AWS Cloud9 is a cloud-based integrated development environment (IDE) that allows you to write, run, and debug code with just a browser. It provides a seamless experience for developers, enabling them to collaborate in real-time and access their development environment from anywhere.
+
+                              Cloud9 integrates with other AWS services to provide a comprehensive development experience.
+                              It offers features such as code completion, debugging, and terminal access to improve developer productivity and operational efficiency.`
+            },
+            {
+              "title": "AWS CloudShell (not done)",
+              "description": `AWS CloudShell is a browser-based shell that makes it easy to securely manage, interact with, and explore your AWS resources. It provides a pre-authenticated shell environment with the AWS CLI and other tools installed, allowing you to quickly run commands and scripts without needing to configure a local environment.
+
+                              CloudShell integrates with other AWS services to provide a seamless management experience.
+                              It offers features such as persistent storage, session management, and access to AWS resources to improve operational efficiency and productivity.`
+            },
+            {
+              "title": "AWS CodeArtifact (not done)",
+              "description": `AWS CodeArtifact is a fully managed artifact repository service that makes it easy for organizations to securely store, publish, and share software packages used in their development process. It helps teams manage their dependencies and ensures that they are using trusted and up-to-date packages.
+
+                              CodeArtifact integrates with other AWS services to provide a comprehensive software development experience.
+                              It offers features such as package versioning, access control, and integration with build tools to improve developer productivity and operational efficiency.`
+            },
+            {
+              "title": "AWS CodeBuild (not done)",
+              "description": `AWS CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy. It eliminates the need to provision, manage, and scale your own build servers.
+
+                              CodeBuild integrates with other AWS services to provide a comprehensive continuous integration and delivery experience.
+                              It offers features such as build automation, scalability, and integration with source control systems to improve developer productivity and operational efficiency.`
+            },
+            {
+              "title": "AWS CodeCommit (not done)",
+              "description": `AWS CodeCommit is a fully managed source control service that makes it easy for teams to host secure and scalable Git repositories. It eliminates the need to manage your own source control system or worry about scaling its infrastructure.
+
+                              CodeCommit integrates with other AWS services to provide a comprehensive software development experience.
+                              It offers features such as automated backups, encryption, and integration with CI/CD tools to improve developer productivity and operational efficiency.`
+            },
+            {
+              "title": "AWS CodeDeploy (not done)",
+              "description": `AWS CodeDeploy is a fully managed deployment service that automates application deployments to various compute services, including Amazon EC2, AWS Lambda, and on-premises servers. It helps you release new features quickly and reliably.
+
+                              CodeDeploy integrates with other AWS services to provide a comprehensive continuous delivery experience.
+                              It offers features such as automated deployments, rollback capabilities, and integration with CI/CD tools to improve developer productivity and operational efficiency.`
+            },
+            {
+              "title": "AWS CodePipeline (not done)",
+              "description": `AWS CodePipeline is a fully managed continuous delivery service that helps you automate your release pipelines for fast and reliable application and infrastructure updates. It allows you to model, visualize, and automate the steps required to release your software.
+                  `
+            },
+            {
+              "title": "AWS CodeStar (not done)",
+              "description": `AWS CodeStar is a cloud-based integrated development environment (IDE) that allows you to write, run, and debug code with just a browser. It provides a seamless experience for developers, enabling them to collaborate in real-time and access their development environment from anywhere.
+                  `
+            },
+            {
+              "title": "AWS X-Ray (not done)",
+              "description": `AWS X-Ray helps developers analyze and debug production, distributed applications, such as those built using a microservices architecture. With X-Ray, you can understand how your application and its underlying services are performing to identify and troubleshoot the root cause of performance issues and errors.
+              `
+            },
+          ]
+        },
+        {
+          "name": "End-user Computing services",
+          "services": [
+            {
+              "title": "Description",
+              "description": `End-user computing services allow employees to securely access desktops and other applications from a variety of devices. You might have heard of or used applications that allow you to remotely access your work computer, sometimes called remote desktops or virtual desktop infrastructure (VDI).`
+            },
+            {
+              "title": "AWS AppStream 2.0 (not done)",
+              "description": `AWS AppConfig is a service that allows you to manage application configurations separately from your code. It helps you deploy application configurations in a controlled and monitored way, reducing the risk of errors and downtime.
+                              AppConfig integrates with other AWS services, making it easy to manage configurations for applications hosted on AWS.
+                              It offers features such as validation, deployment strategies, and monitoring to ensure configurations are applied safely and effectively.`
+            },
+            {
+              "title": "AWS WorkSpaces (not done)",
+              "description": `AWS WorkSpaces is a cloud-based integrated development environment (IDE) that allows you to write, run, and debug code with just a browser. It provides a seamless experience for developers, enabling them to collaborate in real-time and access their development environment from anywhere.
+
+                              WorkSpaces integrates with other AWS services to provide a comprehensive development experience.
+                              It offers features such as code completion, debugging, and terminal access to improve developer productivity and operational efficiency.`
+            },
+            {
+              "title": "AWS WorkSpaces Web (not done)",
+              "description": `AWS WorkSpaces Web is a browser-based shell that makes it easy to securely manage, interact with, and explore your AWS resources. It provides a pre-authenticated shell environment with the AWS CLI and other tools installed, allowing you to quickly run commands and scripts without needing to configure a local environment.
+
+                              WorkSpaces Web integrates with other AWS services to provide a seamless management experience.
+                              It offers features such as persistent storage, session management, and access to AWS resources to improve operational efficiency and productivity.`
+            },
+          ]
+        },
+        {
+          "name": "Front-End Web and Mobile services",
+          "services": [
+            {
+              "title": "Description",
+              "description": `Front-end web and mobile services on AWS are tools that are built on top of AWS, so that you benefit from the reliability of AWS and build web and mobile apps faster with the most well-known service being AWS Amplify. They make it simple to innovate with end-to-end solutions, to develop, test, and monitor your applications, as well as scale seamlessly across the globe. Services that are in-scope for IoT services are AWS IoT Core and AWS IoT Greengrass.`
+            },
+            {
+              "title": "AWS Amplify (not done)",
+              "description": `AWS Amplify is a service that allows you to manage application configurations separately from your code. It helps you deploy application configurations in a controlled and monitored way, reducing the risk of errors and downtime.
+                              Amplify integrates with other AWS services, making it easy to manage configurations for applications hosted on AWS.
+                              It offers features such as validation, deployment strategies, and monitoring to ensure configurations are applied safely and effectively.`
+            },
+            {
+              "title": "AWS AppSync (not done)",
+              "description": `AWS Cloud9 is a cloud-based integrated development environment (IDE) that allows you to write, run, and debug code with just a browser. It provides a seamless experience for developers, enabling them to collaborate in real-time and access their development environment from anywhere.
+
+                              Cloud9 integrates with other AWS services to provide a comprehensive development experience.
+                              It offers features such as code completion, debugging, and terminal access to improve developer productivity and operational efficiency.`
+            },
+          ]
+        },
+        {
+          "name": "IoT services",
+          "services": [
+            {
+              "title": "Description",
+              "description": `They help you connect and manage IoT devices and data.`
+            },
+            {
+              "title": "AWS IoT Core (not done)",
+              "description": ``
+            },
+            {
+              "title": "AWS Greengrass (not done)",
+              "description": `AWS Greengrass is a service that extends AWS functionality to edge devices, allowing them to act locally on the data they generate while still using the cloud for management, analytics, and storage.
+
+                              Greengrass integrates with other AWS services to provide a comprehensive IoT solution.
+                              It offers features such as local compute, messaging, data caching, and machine learning inference to improve device functionality and operational efficiency.`
+            },
+          ]
+        },
+      ]
+    },
+    {
+      "name": "Billing and Cost Management",
+      "groups": [
+        {
+          "name": "Concepts and services",
+          "services": [
+            {
+              "title": "AWS Billing Dashboard",
+              "description": `Estimate and plan for your aws cost
+                              simplify account with multiple AWS accounts through consolidated billing.
+                              Receive alerts for service usage and spending thresholds.
+                              Visualize monthly costs and usage patterns with detailed reports and graphs.
+
+                              The AWS Billing Dashboard provides a comprehensive view of your AWS account's billing and usage information. It allows you to monitor your spending, set budgets, and manage your costs effectively.
+
+                              View detailed billing information and usage reports.
+                              Set up budgets and alerts to control costs.
+                              Analyze spending patterns and optimize resource usage.
+                              Access detailed billing reports and cost allocation data.`
+            },
+            {
+              "title": "Types of charges",
+              "description": `Compute, Storage, Outbound Data transfer
+
+                Compute: Charges for using AWS compute services such as Amazon EC2, AWS Lambda, and Amazon ECS. These charges are based on factors like instance type, usage duration, and the number of requests.
+                Storage: Charges for using AWS storage services such as Amazon S3, Amazon EBS, and Amazon Glacier. These charges are based on the amount of data stored, the storage class used, and the number of requests made to access the data.
+                Outbound Data transfer: Charges for data transferred out of AWS to the internet or to other AWS regions. **Inbound data transfer is typically free**, but outbound data transfer is charged based on the amount of data transferred.`
+            },
+            {
+              "title": "AWS Cost Explorer",
+              "description": `help you get granular insights into your AWS costs and usage. It provides a user-friendly interface to visualize and analyze your spending patterns, allowing you to identify cost-saving opportunities and optimize resource usage.
+
+              AWS Cost Explorer helps you visualize, understand,
+              and manage your AWS costs and usage over time. It provides detailed insights into your spending patterns,
+              allowing you to identify cost-saving opportunities and optimize resource usage.
+              `
+            },
+            {
+              "title": "AWS Free Tier",
+              "description": `AWS Free Tier helps you explore and try out AWS services for free within certain usage limits. It provides an opportunity to learn and experiment with AWS services without incurring costs.
+
+              AWS free tier types:
+              12 months free - includes 85+ AWS services with specific usage limits for each service, such as 750 hours of Amazon EC2 t2.micro instances, 5 GB of Amazon S3 storage, and 1 million AWS Lambda requests per month.
+              always free - shows services that are free to use regardless of the time frame, with some usage limits.
+              trials - offers limited-time access to certain AWS services for free, allowing you to explore and test them before committing to a paid plan.
+              `
+            },
+
+          ]
+        },
+        {
+          "name": "Compute Resources Pricing models",
+          "services": [
+            {
+              "title": "Pay as you go (on-demand instances)",
+              "description": ` is the most flexible pricing plan where you only pay for what you use with no need for commitment and flexibility to changes in needs. `
+            },
+            {
+              "title": "Save when you commit (reserved instances)",
+              "description": `allows you to save money by committing to using a specific resource for a certain period of time. `
+            },
+            {
+              "title": "Saving plans",
+              "description": `Like reserved instances, you can save money by committing in advance with saving plans. The very high level difference is that you commit to an hourly spend or how much you spend per an hour of usage as opposed to resource usage or booking a certain amount of computing power. You can save up to 72% compared to on-demand pricing for one or three-year hourly spend commitment.`
+            },
+            {
+              "title": "Spot instances(Take avantage of unused EC2 capacity at a discounted price)",
+              "description": `AWS has loads and loads of servers at the ready to service its global customers. As a result, a lot of the resources go unused from time to time. To solve this problem, AWS will put these unutilized resources up for sale with huge savings compared with on-demand instances. Amazon EC2 spot instances are up to
+                            90% off on-demand pricing. The downside to relying on spot instances is that they're not always available, so you would only be able to utilize them for resources you need for short periods of time on a flexible schedule. Spot instances are great for running tests or doing computational work with flexible timing. `
+            },
+            {
+              "title": "Dedicated hosts (physical servers with EC2 instance capacity fully dedicated to your use)",
+              "description": ` With Amazon EC2 dedicated hosts, you can benefit from the cost effectiveness of utilizing your own
+              licenses while also taking advantage of the elasticity and simplicity of AWS. With dedicated hosts, as the name suggests,
+              you get your own physical server dedicated to your organization, which can help with certain compliance requirements.`
+            },
+            {
+              "title": "Dedicated Instances (EC2 instances that run on hardware dedicated to a single customer)",
+              "description": `. Amazon EC2 instances are by default running on shared tenancy hardware,
+              which means that while each instance is isolated, it's still running on the same server that's shared between many different customers.
+
+              Dedicated instances provide each customer with dedicated hardware so that instances are isolated from other customers at a hardware level.
+              Each physical hardware is linked to one single AWS account, though this specific hardware may have non-dedicated instance from that same AWS account.
+               As with dedicated hosts, utilizing dedicated instances may help solve some compliance requirements for your organization.`
+            },
+            {
+              "title": "Capacity reservations (reserve capacity for EC2 instances in a specific Availability Zone for any duration)",
+              "description": `You can also reserve compute capacity in advance with capacity reservations.
+              Sometimes your workloads are flexible and can be turned on or off depending on resource availability,
+               but other times you want to make sure the resource is available in advance in a certain availability zone.
+               While there is no explicit savings from reserving in advance with capacity reservation compared to on-demand rate,
+                you are not charged anything for the reservation, allowing you to be confident that you have resources available to you
+                when you need it without any additional costs. `
+            },
+            {
+              "title": "Pay less by using more (volume discounts)",
+              "description": `The concept of pay less per unit or volume by using more allows you to take advantage of volume discounts for certain services, such as receiving tiered pricing for Amazon S3, where the more you use, the less you pay per gigabyte of storage.`
+            },
+          ]
+        },
+        {
+          "name": "AWS budgets and cost management resources",
+          "services": [
+            {
+              "title": "AWS Budgets",
+              "description": `Help you visualize cost **before you spend**
+                              AWS Budgets allows you to set custom cost and usage budgets that alert you when you exceed your thresholds. This helps you manage your AWS costs and usage effectively.
+                              Send alerts when your costs or usage exceed (or are forecasted to exceed) your budget thresholds.
+                              Respond with custom actions, such as sending notifications or triggering AWS Lambda functions to automate cost management tasks.
+                              Receive AWS budgets report daily, weekly, or monthly via email to keep track of your spending and usage patterns.`
+            },
+            {
+              "title": "AWS Cost Explorer",
+              "description": `Helps you analyze **after you spend**
+                              Analyze your AWS resouce usage after the fact and create usage forecast to project future AWS costs. It provides a user-friendly interface to visualize and analyze your spending patterns, allowing you to identify cost-saving opportunities and optimize resource usage.
+                              Create custom reports based on usage to analyze data at high or granular levels.`
+            },
+            {
+              "title": "AWS Cost and Usage Report (AWS CUR)",
+              "description": `Provide your AWS cost and usage data as a report to help understand cost drivers
+                              **Identify ways to optimize monthly AWS usage bills**
+                              Provide **metadata** on AWS services, pricing, credits, fees, taxes, discounts, cost categoriex, Reserved Instances and savings plans.
+                              Utilize AWS cost allocation tags on reports.
+                              Integrate data with **Amazon Athena, Amazon Redshift, and Amazon QuickSight** for detailed analysis.`
+            },
+            {
+              "title": "AWS Billing Conductor",
+              "description": `Analyze your organization or customers' spending and bill for resouce usage based on your defined rates.
+                              Generate AWS Cost and Usage reports for each billing group`
+            },
+            {
+              "title": "AWS Pricing Calculator",
+              "description": `Located at Calculator.aws
+
+                              Replaced the AWS Total Cost of Ownership Calculator
+
+                              Takes estimated resource usage you input from current infrastructure and provides estimated costs for running your workloads on AWS Cloud
+
+                              Estimate your AWS costs and usage for your architecture.
+                              The AWS Pricing Calculator allows you to create custom cost estimates for AWS services based on your specific usage patterns and requirements.`
+            },
+          ]
+        },
+        {
+          "name": "AWS Consolidated Billing",
+          "services": [
+            {
+              "title": "Description",
+              "description": `Creates a payer AWS account to view and pay combined billing charges for all linked accounts in the organization.
+                              Independent account that can't use any other services.
+                              Cannot deploy services into the linked accounts
+                              All reousce usage becomes consolidated as usage from one large entity - organization may be eligible for volume discounts.`
+            },
+          ]
+        },
+      ]
+    },
+    {
+      "name": "Support plans and resources",
+      "groups": [
+        {
+          "name": "AWS Support plans",
+          "services": [
+            {
+              "title": "Basic Support Plan",
+              "description": `Free(included for all AWS customers) pairs well with AWS free tier
+                              for experimenting or testing in AWS
+                              Account and Billing inquiries
+                              Service quota increase request
+                              Access to support forums and documentation
+                              Access to AWS Health Dashboard and AWS Trusted advisor checks`
+            },
+            {
+              "title": "Developer Support Plan",
+              "description": `Great for developers who are in the experimentation phase and need technical support for their applications. **It includes all the features of the Basic Support Plan**
+                              ability to open support tickets.
+                              Not fast enough for production workloads
+                              **Minimum spend of $29 per month or 3% of monthly AWS usage**, whichever is greater.
+                              Access to best-practice guidance and AWS support API.
+                              **Prioritize response on AWS re:Post, access to AWS support App in Slack**
+                              Unlimited number of support cases via one primary contact(root user) with business-hour email access to Cloud Support Associates
+                              **SLA (Service Level Agreement): 24 hours for general guidance and 12 hours for system impaired issues.**
+
+                              Access to **Support Automation Workflows(SAW)** with AWS Support prefix in AWS Support self-service runbooks
+                              **Runbooks**: help you proactively monitor and identify network issues, collect and analyze logs, and troubleshoot issues with your AWS resources.
+
+                              Provides guidance for developing and testing applications on AWS. Includes access to AWS Trusted Advisor checks, AWS Support API, and best practice guidance.`
+            },
+            {
+              "title": "Business Support Plan",
+              "description": `Ideal for production workloads and provides 24/7 access to AWS support engineers via phone, chat, and email. **It includes all the features of the Developer Support Plan**
+                              Access to AWS Trusted Advisor checks and AWS Support API.
+                              Access to AWS Support API to automate support case management with AWS Trusted Advisor and Support Center
+
+                              Access to use-case guidance on how to use AWS products and services to support your organization's needs 24/7
+
+                              Access to Support Automation Workflows with prefixes AWSSupport and AWSPremiumSupport
+
+                              Infrastructure Event Management (for additional fee)
+
+                              Support response: less than 24 hours for general guidance, less than 12 hours for system impaired, less than 4 hours for production system impaired, less than 1 hour for production system down
+
+                              Minimum spend of $100 per month or ...
+                                10% of monthly charges for $0-$10,000
+                                7% of monthly charges for $10,000-$80,000
+                                5% of monthly charges for $80,000-$250,000
+                                3% of monthly charges over $250,000`
+            },
+            {
+              "title": "Enterprise On-Ramping Support Plan",
+              "description": `
+                              Minimum spend of of $5,500 or 10% of monthly charges
+
+                              For those with production and/or business-critical workloads in AWS
+
+                              Everything in Business Support plan
+
+                              Access to consultative application architecture guidance to see how AWS services and resources can work together
+
+                              Access to short-term engagement with AWS Support to receive architectural and scaling guidance for Infrastructure Event Management (once a year)
+
+                              **Access to a pool of Technical Account Managers (TAMs)** for support cases, proactive guidance, general use case support, etc., as well as white-gloved case routing via the Concierge Support Team
+
+                              **Support response**: less than 24 hours for general guidance, less than 12 hours for system impaired, less than 4 hours for production system impaired, less than 1 hour for production system down,
+                              and less than 30 minutes for business-critical system down
+                              `
+            },
+            {
+              "title": "Enterprise Support Plan",
+              "description": `For those with production and/or business-critical workloads in AWS
+                              Everything in Enterprise On-Ramping Support Plan
+
+                              Minimum spend of $15,000 or ...
+                              10% of monthly changes for $0-$150,000
+                              7% of monthly charges for $150,000-$500,000
+                              5% of monthly charges for $500,000-$1,000,000
+                              3% of monthly charges over $1,000,000
+
+                              Infrastructure Event Management (not limited to once a year)
+
+                              Access to proactive workshops, reviews, and deep dives
+
+                              AWS Incident Detection and Response service available for additional fee
+
+                              Assigned a Technical Account Manager (TAM)
+
+                              Receive prioritized recommendations from AWS Trusted Advisor Priority
+
+                              Access to online self-paced labs for employee training
+
+                              Support SLA: less than 24 hours for general guidance, less than 12 hours for system impaired, less than 4 hours for production system impaired, less than 1 hour for production
+                              system down, and less than 15 minutes for business- or mission-critical system down
+                              `
+            },
+            {
+              "title": "Compare support plan site",
+              "description": `aws.amazon.com/premiumsupport/plans/`
+            },
+          ]
+        },
+        {
+          "name": "Official AWS Resources",
+          "services": [
+            {
+              "title": "Resources",
+              "description": `
+              You can find ready access AWS resources at AWS Whitepapers, Blogs, and Documentation.
+              AWS Whitepapers and Guides:
+              https://aws.amazon.com/whitepapers
+              AWS Blog:
+              https://aws.amazon.com/blogs
+              AWS Documentation:
+              https://docs.aws.amazon.com
+
+              You can ask questions and get responses from peers, AWS community leaders, and AWS employees at AWS re:Post.
+              AWS re:Post:
+              https://repost.aws
+
+              AWS Knowledge Center is an official AWS repost hub that answers most frequently asked questions and requests they receive from AWS customers in articles and videos formats.
+              AWS Knowledge Center:
+              https://repost.aws/knowledge-center
+
+              If a company is creating an AWS-based business, they could gain credibility in AWS-supported programs to help expand and differentiate their offerings by joining the AWS Partner program. Aside from the credibility you earn by being an official AWS-sanctioned partner, your organization can receive partner training, certification, volume discounts, and attend partner events.
+              Partner Network has a group of highly skilled partners that provide AWS professional services to help you, as a customer, execute your enterprise cloud computing initiatives. The AWS  Some programs available to AWS partners may be the AWS Marketplace Channel programs, where partners can sell their AWS products, like pre-made Amazon EC2 instance templates on the AWS Marketplace,
+              and AWS Training Partner program, which validates authenticity of a training program by becoming an official AWS training partner. As a consumer, when you encounter issues, you could look to companies that are part of the AWS Partner programs to find qualified service providers to solve your business needs.
+              AWS Partner Networks
+
+              If you are looking for business or technological solutions, and don't want to architect infrastructure from the ground up, you could take advantage of the AWS Marketplace,where vendors and partners provide expert services and software solutions that run on AWS for you to purchase and utilize.
+              AWS Marketplace:
+              https://aws.amazon.com/marketplace
+
+              When you're ready to talk to someone, you also have access to the AWS Support Plans with tiered services available, depending on how much you utilize your AWS resources and how much you're willing to pay.
+              AWS Support Plans
+
+              When you encounter abuse of AWS resources, you can contact the AWS Trust and Safety Team through a form available when you Google report abusive activity from Amazon Web Service resources.
+              AWS Trust and Safety Team
+
+              contact AWS support directly. For that, AWS has a page dedicated for AWS support services available both to the public and for subscribers at aws.amazon.com/contact-us.
+              AWS Support Center:
+              https://aws.amazon.com/contact-us`
+            },
+          ]
+        },
+        {
+          "name": "Compute Resources Pricing models",
+          "services": [
+            {
+              "title": "Pay as you go (on-demand instances)",
+              "description": ` is the most flexible pricing plan where you only pay for what you use with no need for commitment and flexibility to changes in needs. `
+            },
+            {
+              "title": "Save when you commit (reserved instances)",
+              "description": `allows you to save money by committing to using a specific resource for a certain period of time. `
+            },
+            {
+              "title": "Saving plans",
+              "description": `Like reserved instances, you can save money by committing in advance with saving plans. The very high level difference is that you commit to an hourly spend or how much you spend per an hour of usage as opposed to resource usage or booking a certain amount of computing power. You can save up to 72% compared to on-demand pricing for one or three-year hourly spend commitment.`
+            },
+            {
+              "title": "Spot instances(Take avantage of unused EC2 capacity at a discounted price)",
+              "description": `AWS has loads and loads of servers at the ready to service its global customers. As a result, a lot of the resources go unused from time to time. To solve this problem, AWS will put these unutilized resources up for sale with huge savings compared with on-demand instances. Amazon EC2 spot instances are up to
+                            90% off on-demand pricing. The downside to relying on spot instances is that they're not always available, so you would only be able to utilize them for resources you need for short periods of time on a flexible schedule. Spot instances are great for running tests or doing computational work with flexible timing. `
+            },
+            {
+              "title": "Dedicated hosts (physical servers with EC2 instance capacity fully dedicated to your use)",
+              "description": ` With Amazon EC2 dedicated hosts, you can benefit from the cost effectiveness of utilizing your own
+              licenses while also taking advantage of the elasticity and simplicity of AWS. With dedicated hosts, as the name suggests,
+              you get your own physical server dedicated to your organization, which can help with certain compliance requirements.`
+            },
+            {
+              "title": "Dedicated Instances (EC2 instances that run on hardware dedicated to a single customer)",
+              "description": `. Amazon EC2 instances are by default running on shared tenancy hardware,
+              which means that while each instance is isolated, it's still running on the same server that's shared between many different customers.
+
+              Dedicated instances provide each customer with dedicated hardware so that instances are isolated from other customers at a hardware level.
+              Each physical hardware is linked to one single AWS account, though this specific hardware may have non-dedicated instance from that same AWS account.
+               As with dedicated hosts, utilizing dedicated instances may help solve some compliance requirements for your organization.`
+            },
+            {
+              "title": "Capacity reservations (reserve capacity for EC2 instances in a specific Availability Zone for any duration)",
+              "description": `You can also reserve compute capacity in advance with capacity reservations.
+              Sometimes your workloads are flexible and can be turned on or off depending on resource availability,
+               but other times you want to make sure the resource is available in advance in a certain availability zone.
+               While there is no explicit savings from reserving in advance with capacity reservation compared to on-demand rate,
+                you are not charged anything for the reservation, allowing you to be confident that you have resources available to you
+                when you need it without any additional costs. `
+            },
+            {
+              "title": "Pay less by using more (volume discounts)",
+              "description": `The concept of pay less per unit or volume by using more allows you to take advantage of volume discounts for certain services, such as receiving tiered pricing for Amazon S3, where the more you use, the less you pay per gigabyte of storage.`
+            },
+          ]
+        },
+        {
+          "name": "AWS budgets and cost management resources",
+          "services": [
+            {
+              "title": "AWS Budgets",
+              "description": `Help you visualize cost **before you spend**
+                              AWS Budgets allows you to set custom cost and usage budgets that alert you when you exceed your thresholds. This helps you manage your AWS costs and usage effectively.
+                              Send alerts when your costs or usage exceed (or are forecasted to exceed) your budget thresholds.
+                              Respond with custom actions, such as sending notifications or triggering AWS Lambda functions to automate cost management tasks.
+                              Receive AWS budgets report daily, weekly, or monthly via email to keep track of your spending and usage patterns.`
+            },
+            {
+              "title": "AWS Cost Explorer",
+              "description": `Helps you analyze **after you spend**
+                              Analyze your AWS resouce usage after the fact and create usage forecast to project future AWS costs. It provides a user-friendly interface to visualize and analyze your spending patterns, allowing you to identify cost-saving opportunities and optimize resource usage.
+                              Create custom reports based on usage to analyze data at high or granular levels.`
+            },
+            {
+              "title": "AWS Cost and Usage Report (AWS CUR)",
+              "description": `Provide your AWS cost and usage data as a report to help understand cost drivers
+                              **Identify ways to optimize monthly AWS usage bills**
+                              Provide **metadata** on AWS services, pricing, credits, fees, taxes, discounts, cost categoriex, Reserved Instances and savings plans.
+                              Utilize AWS cost allocation tags on reports.
+                              Integrate data with **Amazon Athena, Amazon Redshift, and Amazon QuickSight** for detailed analysis.`
+            },
+            {
+              "title": "AWS Billing Conductor",
+              "description": `Analyze your organization or customers' spending and bill for resouce usage based on your defined rates.
+                              Generate AWS Cost and Usage reports for each billing group`
+            },
+            {
+              "title": "AWS Pricing Calculator",
+              "description": `Located at Calculator.aws
+
+                              Replaced the AWS Total Cost of Ownership Calculator
+
+                              Takes estimated resource usage you input from current infrastructure and provides estimated costs for running your workloads on AWS Cloud
+
+                              Estimate your AWS costs and usage for your architecture.
+                              The AWS Pricing Calculator allows you to create custom cost estimates for AWS services based on your specific usage patterns and requirements.`
+            },
+          ]
+        },
+        {
+          "name": "AWS Consolidated Billing",
+          "services": [
+            {
+              "title": "Description",
+              "description": `Creates a payer AWS account to view and pay combined billing charges for all linked accounts in the organization.
+                              Independent account that can't use any other services.
+                              Cannot deploy services into the linked accounts
+                              All reousce usage becomes consolidated as usage from one large entity - organization may be eligible for volume discounts.`
+            },
+          ]
+        },
+      ]
+    },
+    {
       "name": "AWS framework",
       "groups": [
         {
@@ -848,7 +1641,7 @@ const awsServicesData = {
               "description": `Document everything
                               Refine operational procedures
                               Anticipate failure
-                              update processes
+                              Update processes
                               It focuses on running and monitoring systems to deliver business value while continuously improving processes.
                               This includes things like automating deployments through pipelines and responding to events effectively to ensure smooth operations.`
             },
@@ -1063,6 +1856,16 @@ const awsServicesData = {
               "description": `Aws has servers in different region
                               When on without aws it takes months and years to expand a business to different areas`
             }
+          ]
+        },
+
+        {
+          "name": "Four domains",
+          "services": [
+            {
+              "title": "Domains",
+              "description": `Cloud Concepts, Security and Compliance, Cloud Technology and services, Billing, Pricing and Support`
+            },
           ]
         },
       ]
