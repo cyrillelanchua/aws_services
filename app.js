@@ -209,11 +209,13 @@ const awsServicesData = {
 
                               **High availability**
                               Hosting resources in multiple AZs allows you to design your applications for high availability.
+                              Making sure applications are accessible with minimal downtime. Even if one component fails another one is able to pick up the slack.
                               By deploying resources across multiple AZs, you can achieve greater resilience and minimize the impact of potential failures.
                               If one AZ experiences an outage, your applications can continue to operate using resources in other AZs, ensuring high availability for your users.
 
                               **Fault tolerance**
                               Ability to provide uninterrupted service even during natural/human-made disasters, hardware failures, or other unexpected events.
+                              Designing a system to continue to operate even if multiple components fails
                               AZs are designed to be independent from failures in other AZs, providing fault tolerance for your applications.
                               If one AZ experiences an outage, your applications can continue to operate using resources in other AZs, minimizing downtime and ensuring a seamless user experience.
 
@@ -1799,21 +1801,22 @@ const awsServicesData = {
               "title": "Private Cloud/ On-Premises",
               "description": `using virtualization and resouce management tools does not provide the benefits of cloud computing.
                               However it is sometimes sought for its ability to provided dedicated resources and low latency
-                              In most cases this deployment model is the same as legacy it infrastructure whule using application management and virtualization technologies
 
-                              Infrastructure is hosted within the organizations own facilities similar to traditional IT infrastructure
+                              In most cases this deployment model is the same as legacy IT infrastructure while using application management and virtualization technologies
 
-                              Pros - full control over hardawre and software and data
-                              Cons hight upfront cost.Limited scalability `
+                              Infrastructure is hosted within the organization's own facilities similar to traditional IT infrastructure
+
+                              Pros - full control over hardware and software and data
+                              Cons - high upfront cost. Limited scalability `
             },
             {
               "title": "Hybrid Cloud",
-              "description": `cloud based and on premise work together.Good when legacy applications must remain on premise due to maintenance preferences or regalatory requeirements
+              "description": `cloud based and on premise work together.Good when legacy applications must remain on premise due to maintenance preferences or regulatory requirements
 
                               A company might retain regulated legacy applications on - premise while using cloud services for advanced data processing and analytics
 
-                              Common use case - running the customer facing apes in the cloud while keeping financial data on premise
-                              company using cloud storage for backup and disaster recovery of on premise data
+                              Common use case - running the customer facing apps in the cloud while keeping financial data on premise
+                              Company using cloud storage for backup and disaster recovery of on premise data
 
                               Great for businesses with existing it investments that want to leverage cloud benefits without full migration `
             }
@@ -1858,13 +1861,41 @@ const awsServicesData = {
             }
           ]
         },
-
+        {
+          "name": "Cloud Computing history",
+          "services": [
+            {
+              "title": "Mainframe computer",
+              "description": `Mainframe computing is the concept of having a central computer accessed by numerous user devices.
+                              The central computer, which had all the compute capabilities was called the mainframe computer.
+                              All the user devices, which sent requests up to the mainframe computer were called dumb terminals. `
+            },
+            {
+              "title": "Virtual machines",
+              "description": `Virtual machines (VMs) are software emulations of physical computers.
+                              They run an operating system and applications just like a physical computer.
+                              VMs provide isolation, flexibility, and efficient resource utilization by allowing multiple VMs to run on a single physical machine.`
+            },
+            {
+              "title": "Hypervisors",
+              "description": `Software that links multiple hardware to use as one giant resource pool for virtual machines.
+                              Hypervisors are software, firmware, or hardware that create and run virtual machines.
+                              A hypervisor allows one host computer to support multiple guest VMs by virtually sharing its resources, such as memory and processing.`
+            },
+          ]
+        },
         {
           "name": "Four domains",
           "services": [
             {
               "title": "Domains",
-              "description": `Cloud Concepts, Security and Compliance, Cloud Technology and services, Billing, Pricing and Support`
+              "description": ` 1) Cloud Concepts,
+
+              2) Security and Compliance,
+
+              3) Cloud Technology and services,
+
+              4) Billing, Pricing and Support`
             },
           ]
         },
@@ -2003,7 +2034,7 @@ function openModal(title, description) {
       // Replace single line breaks within paragraphs with <br>
       const formattedPara = para.replace(/\n/g, '<br>');
       // Apply text formatting (bold, highlight)
-      return `< p > ${formatText(formattedPara)}</p > `;
+      return `<p>${formatText(formattedPara)}</p>`;
     })
     .join('');
 
